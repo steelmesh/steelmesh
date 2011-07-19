@@ -1,0 +1,21 @@
+{
+    "name": "geostack",
+    "description": "Sidelab Node Geostack",
+    "main": "./index.js",
+    "author": "Damon Oehlman, Sidelab Pty Ltd",
+    "version": "0.1.1",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/sidelab/geostack.git"
+    },
+    "bugs": {
+        "web": "https://github.com/sidelab/stack/issues"
+    },
+    "licenses": [{
+        "type": "GPL",
+        "url": "http://github.com/sidelab/geojs/raw/LICENCE#GPL"
+    }, 
+        "type": "Commercial",
+        "url": "http://github.com/sidelab/geojs/raw/LICENCE#CommercialUse"
+    }]
+}
