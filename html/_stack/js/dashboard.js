@@ -8,7 +8,7 @@
                 var systems = $('.system');
                 
                 systems.parent().show();
-                weld(systems[0], data.systems, {
+                weld(systems[0], data.connectors, {
                     map: function(parent, el, k, v) {
                         if (k === 'status') {
                             $(el).addClass(v);
