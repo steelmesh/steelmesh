@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.47pre4 r22446"
    sodipodi:docname="geostack-frontpage.svg"
-   inkscape:export-filename="/development/projects/github/sidelab/stack/assets/front.png"
+   inkscape:export-filename="/development/projects/github/sidelab/nodestack/assets/nodestack.png"
    inkscape:export-xdpi="77.139999"
    inkscape:export-ydpi="77.139999">
   <defs
@@ -2692,7 +2692,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1"
      inkscape:cx="181.80036"
-     inkscape:cy="55.507002"
+     inkscape:cy="-64.492998"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
