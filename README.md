@@ -1,7 +1,6 @@
-# Geostack Node Module
+# nodeSTACK
 
-## Required Modules (Global Install)
+![nodeSTACK](https://github.com/sidelab/nodestack/raw/master/assets/nodestack.png)
 
-- [libxmljs](https://github.com/polotek/libxmljs)
-- [request](https://github.com/mikeal/request)
+The nodeSTACK architecture is Sidelab's recommended and supported architecture for [nodeJS](http://nodejs.org/) web applications.
 
