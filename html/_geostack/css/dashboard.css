@@ -38,14 +38,15 @@ h2 {
     -webkit-box-shadow: #333 0 1px 2px;
 }
 
-ul.dash-status {
+ul.dash-list {
     display: none;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-ul.dash-status li {
+ul.dash-list li span {
+    display: block;
     margin: 0;
     padding: 8px;
     font-weight: bold;
@@ -54,10 +55,18 @@ ul.dash-status li {
     border-bottom: 1px solid #1C0113;
 }
 
-li.ok {
+ul.dash-list li:nth-child(2n) {
+    background: #aaa;
+}
+
+ul.dash-list li {
+    background: #888;
+}
+
+span.ok {
     background: #ABD406;
 }
 
-li.down {
+span.down {
     background: #A30006;
 }

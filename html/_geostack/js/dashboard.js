@@ -5,16 +5,27 @@
             url: '/dash/status',
             dataType: 'json',
             success: function(data) {
-                var statuses = $('ul.dash-status');
+                var systems = $('.system');
                 
-                statuses.show();
-                weld(statuses[0], data.systems, {
+                systems.parent().show();
+                weld(systems[0], data.systems, {
                     map: function(parent, el, k, v) {
                         if (k === 'status') {
                             $(el).addClass(v);
-                        } // if
+                        }
                     }
                 });
+            }
+        });
+        
+        $.ajax({
+            url: '/dash/datasets',
+            dataType: 'json',
+            success: function(data) {
+                var datasets = $('.dataset');
+                datasets.parent().show();
+                
+                weld(datasets[0], data.datasets);
             }
         });
     } // init
