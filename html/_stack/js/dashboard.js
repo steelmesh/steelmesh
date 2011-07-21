@@ -19,6 +19,19 @@
         });
         
         $.ajax({
+            url: '/_jobdata.json',
+            dataType: 'json',
+            success: function(data) {
+                var jobs = $('.job');
+                
+                if (data.jobs.length > 0) {
+                    jobs.parent().show();
+                    weld(jobs[0], data.jobs);
+                } // if
+            }
+        });
+        
+        $.ajax({
             url: '/_stack/dash/datasets',
             dataType: 'json',
             success: function(data) {
