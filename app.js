@@ -3,4 +3,4 @@ module.exports = require('./lib/stack').init({
         'http://localhost:8080/geoserver/wfs'
     ],
     datapath: '/development/projects/clients/racq/poidata/'
-}).createServer();
+});
