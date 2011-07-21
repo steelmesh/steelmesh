@@ -4,7 +4,7 @@ var vows = require('vows'),
 vows.describe('Extension Management').addBatch({
     'loading extensions': {
         topic: function() {
-            return require('../lib/geostack/extensions');
+            return require('../lib/stack/extensions');
         },
         
         defined: function(topic) {

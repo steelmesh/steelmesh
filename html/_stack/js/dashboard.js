@@ -2,7 +2,7 @@
     
     function init() {
         $.ajax({
-            url: '/dash/status',
+            url: '/_dash/status',
             dataType: 'json',
             success: function(data) {
                 var systems = $('.system');
@@ -19,7 +19,7 @@
         });
         
         $.ajax({
-            url: '/dash/datasets',
+            url: '/_dash/datasets',
             dataType: 'json',
             success: function(data) {
                 var datasets = $('.dataset');
