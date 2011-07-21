@@ -1,2 +1,4 @@
 nginx/
+pids/
+.sock
 stack.log

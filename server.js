@@ -1,8 +1,8 @@
 var cluster = require('cluster');
 
 cluster('./app')
-    .use(cluster.logger('logs'))
-    .use(cluster.debug())
+    // .use(cluster.logger('logs'))
+//     .use(cluster.debug())
     .use(cluster.stats())
     .use(cluster.pidfiles('pids'))
     .use(cluster.cli())
