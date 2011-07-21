@@ -12,4 +12,4 @@ app.cluster = cluster(app.createServer())
     .listen(3001);
 
 // load the jobs list
-app.loadJobs();
+app.init();
