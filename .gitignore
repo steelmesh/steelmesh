@@ -2,3 +2,4 @@ nginx/
 pids/
 .sock
 stack.log
+_jobdata.json
