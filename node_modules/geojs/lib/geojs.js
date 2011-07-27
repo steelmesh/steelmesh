@@ -33,12 +33,12 @@
                 plugin;
 
             if (! loadedPlugins[pluginId]) {
-                allLoaded = false;
-
                 if (IS_COMMONJS) {
-                    plugin = require('./plugins/' + pluginId);
+                    plugin = loadedPlugins[pluginId] = require('./plugins/' + pluginId);
                 }
                 else if (labLoader) {
+                    allLoaded = false;
+
                 } // if..else
             } // for
         } // for
