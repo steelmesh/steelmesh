@@ -1,4 +1,4 @@
-var GeoJS = require('../../lib/geojs').include('decarta'),
+var GeoJS = require('../../lib/geojs').load('decarta'),
     positions = [
     ];
 

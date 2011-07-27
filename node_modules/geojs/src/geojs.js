@@ -22,12 +22,12 @@
         return requestedPlugins;
     } // findPlugins
 
-    function require(input, callback) {
+    function plugin(input, callback) {
         var plugins = input.split(','),
             allLoaded = true,
             labLoader = typeof $LAB !== 'undefined' ? $LAB : null,
             pluginName;
-
+            
         for (var ii = 0; ii < plugins.length; ii++) {
             var pluginId = plugins[ii].replace(reTrim, '$1').replace(reDots, '/'),
                 plugin;
@@ -57,7 +57,7 @@
         } // if
 
         return GeoJS;
-    } // include
+    } // plugin
     
     //= require "core/constants"
     //= require "core/pos"
@@ -82,7 +82,7 @@
         parseDuration: parseDuration,
         
         define: define,
-        require: require
+        plugin: plugin
     };
     
     if (IS_COMMONJS) {

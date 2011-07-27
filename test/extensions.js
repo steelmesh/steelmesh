@@ -4,7 +4,7 @@ var vows = require('vows'),
 vows.describe('Extension Management').addBatch({
     'loading extensions': {
         topic: function() {
-            return require('../lib/stack/extensions');
+            return require('../lib/extensions');
         },
         
         defined: function(topic) {

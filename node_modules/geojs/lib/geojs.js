@@ -22,7 +22,7 @@
         return requestedPlugins;
     } // findPlugins
 
-    function require(input, callback) {
+    function plugin(input, callback) {
         var plugins = input.split(','),
             allLoaded = true,
             labLoader = typeof $LAB !== 'undefined' ? $LAB : null,
@@ -55,7 +55,7 @@
         } // if
 
         return GeoJS;
-    } // include
+    } // plugin
 
 var LAT_VARIABILITIES = [
     1.406245461070741,
@@ -784,7 +784,7 @@ var parseDuration = (function() {
         parseDuration: parseDuration,
 
         define: define,
-        require: require
+        plugin: plugin
     };
 
     if (IS_COMMONJS) {
