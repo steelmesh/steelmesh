@@ -1,0 +1,1 @@
+Logs folder for the nginx server
