@@ -37,7 +37,7 @@
                 allLoaded = false;
                 
                 if (IS_COMMONJS) {
-                    plugin = require('./plugins/' + pluginFile);
+                    plugin = require('./plugins/' + pluginId);
                 }
                 else if (labLoader) {
                     // TODO: add $LABjs loading here also
