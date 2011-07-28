@@ -129,18 +129,6 @@
        y2="329.47769" />
     <filter
        inkscape:collect="always"
-       id="filter4548"
-       x="-0.12066667"
-       width="1.2413333"
-       y="-0.35413043"
-       height="1.7082609">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="6.7875"
-         id="feGaussianBlur4550" />
-    </filter>
-    <filter
-       inkscape:collect="always"
        id="filter4556"
        x="-0.20111111"
        width="1.4022222"
@@ -159,9 +147,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.89953493"
-     inkscape:cx="342.4615"
-     inkscape:cy="1038.6043"
+     inkscape:zoom="2"
+     inkscape:cx="302.54015"
+     inkscape:cy="971.98866"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -178,7 +166,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -442,14 +430,14 @@
                  y="184.78873">nodeSTACK</tspan></text>
             <text
                id="text4526"
-               y="218.47098"
-               x="73.624763"
-               style="font-size:38.68370819px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:League Gothic;-inkscape-font-specification:League Gothic"
+               y="216.51358"
+               x="65.808723"
+               style="font-size:33.35747528px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:League Gothic;-inkscape-font-specification:League Gothic"
                xml:space="preserve"><tspan
-                 y="218.47098"
-                 x="73.624763"
+                 y="216.51358"
+                 x="65.808723"
                  id="tspan4528"
-                 sodipodi:role="line">LARVA</tspan></text>
+                 sodipodi:role="line">VILLAGER</tspan></text>
           </g>
         </g>
       </g>
