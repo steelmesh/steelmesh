@@ -1,5 +1,6 @@
 nginx/
 pids/
+logs/
 .sock
 stack.log
 _jobdata.json
