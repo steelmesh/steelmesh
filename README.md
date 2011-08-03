@@ -9,8 +9,7 @@ The nodeSTACK architecture is Sidelab's recommended and supported architecture f
 - [Cluster](https://github.com/LearnBoost/cluster)
 - [Connect](https://github.com/senchalabs/connect)
 - [Quip](https://github.com/caolan/quip)
-- [Winston](https://github.com/indexzero/winston)
-- [Request](https://github.com/mikael/request)
+- [Request](https://github.com/mikeal/request)
 
 ## Installing
 
