@@ -1,6 +1,6 @@
 nginx/
 pids/
-db/
+changelog/
 logs/
 .sock
 stack.log

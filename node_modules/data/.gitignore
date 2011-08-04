@@ -1,0 +1,17 @@
+*.log
+config.json
+log/*
+snippets/*
+doc
+cov
+pkg
+.DS_Store
+coverage.html
+coverage/*
+*.db
+\#*
+_Yardoc
+.yardoc
+tmp/*
+README.bak
+node_modules
