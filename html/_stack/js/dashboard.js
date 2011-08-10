@@ -23,6 +23,7 @@
         $.ajax({
             url: '/_jobdata.json',
             dataType: 'json',
+            cache: false,
             success: function(data) {
                 var jobs = $('.job');
                 
