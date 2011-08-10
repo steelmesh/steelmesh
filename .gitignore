@@ -1,7 +1,9 @@
 nginx/
 pids/
 changelog/
+node_modules/.bin/
 logs/
 .sock
 stack.log
 _jobdata.json
+settings.json
