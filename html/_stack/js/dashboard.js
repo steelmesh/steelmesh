@@ -7,6 +7,8 @@
             success: function(data) {
                 var systems = $('.system');
                 
+                console.log(data);
+                
                 systems.parent().show();
                 weld(systems[0], data.connectors, {
                     map: function(parent, el, k, v) {
