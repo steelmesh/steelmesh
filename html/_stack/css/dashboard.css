@@ -45,7 +45,7 @@ ul.dash-list {
     padding: 0;
 }
 
-ul.dash-list li span {
+ul.dash-list li {
     display: block;
     margin: 0;
     padding: 8px;
