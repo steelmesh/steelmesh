@@ -1,4 +1,4 @@
-CREATE TABLE aaat_acc (
+CREATE TABLE test_type (
     gid serial PRIMARY KEY,
     id varchar(80),
 "name" varchar(80),
@@ -13,4 +13,4 @@ CREATE TABLE aaat_acc (
 "gsr" varchar(80),
 "gsrcount" varchar(80)
 );
-SELECT AddGeometryColumn('','aaat_acc','the_geom','4236','POINT',2);
+SELECT AddGeometryColumn('','test_type','the_geom','4236','POINT',2);
