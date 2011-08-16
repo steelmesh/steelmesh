@@ -1,16 +1,11 @@
+DROP TABLE IF EXISTS test_type;
+
 CREATE TABLE test_type (
     gid serial PRIMARY KEY,
     id varchar(80),
-"name" varchar(80),
-"lat" varchar(80),
-"lon" varchar(80),
-"category" varchar(80),
-"chain" varchar(80),
-"rating" varchar(80),
-"greenrated" varchar(80),
-"region" varchar(80),
-"allowpets" varchar(80),
-"gsr" varchar(80),
-"gsrcount" varchar(80)
+    name varchar(80),
+    lat numeric,
+    lon numeric
 );
-SELECT AddGeometryColumn('','test_type','the_geom','4236','POINT',2);
+
+SELECT AddGeometryColumn('','test_type','the_geom',4326,'POINT',2);

@@ -1,1 +1,0 @@
-ALTER TABLE test_type DROP COLUMN "chain";
