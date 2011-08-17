@@ -1,6 +1,6 @@
 # steelmesh
 
-![steelmesh](https://github.com/sidelab/nodestack/raw/master/assets/steelmesh.png)
+![steelmesh](https://github.com/sidelab/steelmesh/raw/master/assets/steelmesh.png)
 
 The steelmesh architecture is Sidelab's recommended and supported architecture for [nodeJS](http://nodejs.org/) web applications.  
 
