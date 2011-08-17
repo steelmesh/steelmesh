@@ -1,20 +1,8 @@
-# steelmesh
-
 ![steelmesh](https://github.com/sidelab/steelmesh/raw/master/assets/steelmesh.png)
 
-The steelmesh architecture is Sidelab's recommended and supported architecture for [nodeJS](http://nodejs.org/) web applications.  
+Steelmesh is a __distributed application framework__ build on top of [Node.js](http://nodejs.org/) and [CouchDB](http://couchdb.apache.org/) (specifically we love using [Couchbase](http://www.couchbase.org/) community editions).
 
-## Powered By
+## What does it do?
 
-- [Cluster](https://github.com/LearnBoost/cluster)
-- [Connect](https://github.com/senchalabs/connect)
-- [Quip](https://github.com/caolan/quip)
-- [Request](https://github.com/mikeal/request)
+Steelmesh is a curated set of Node.js packages, along with some [Sidelab](http://www.sidelab.com) built goodness to make writing distributed, reliable server-side Javascript applications repeatable.
 
-## Installing
-
-Installing steelmesh is designed to be as simple as cloning this repository.  As many of the require node modules are required in this repository to ensure version compatibility.  However, the following modules are required as a global install:
-
-```bash
-npm install -g libxmljs
-```
