@@ -1,1 +1,1 @@
-module.exports = require('./lib/stack').configure();
+module.exports = require('./lib/steelmesh').configure();

@@ -1,1 +1,1 @@
-nodeSTACK logs directory
+steelmesh logs directory
