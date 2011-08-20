@@ -1,5 +1,6 @@
 nginx/
 pids/
+lib/apps/
 changelog/
 node_modules/.bin/
 logs/
