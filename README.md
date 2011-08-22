@@ -6,8 +6,6 @@ Steelmesh is a __distributed application framework__ build on top of [Node.js](h
 
 Steelmesh is a curated set of Node.js packages, along with some [Sidelab](http://www.sidelab.com) built goodness to make writing distributed, reliable server-side Javascript applications repeatable.
 
-
-
 ## Architecture Configurations
 
 ### Standalone
