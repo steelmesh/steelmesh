@@ -4,9 +4,6 @@ npm update
 echo "Updating Comfy"
 npm rm comfy && npm install https://github.com/DamonOehlman/comfy/tarball/master
 
-echo "Updating GeoJS"
-npm rm geojs && npm install https://github.com/sidelab/geojs/tarball/master
-
 echo "Updating quip"
 npm rm quip && npm install https://github.com/caolan/quip/tarball/master
 
