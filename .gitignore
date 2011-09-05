@@ -2,7 +2,7 @@ nginx/
 pids/
 lib/apps/
 changelog/
-node_modules/.bin/
+node_modules
 logs/
 .sock
 stack.log
