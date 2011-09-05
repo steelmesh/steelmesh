@@ -1,4 +1,4 @@
-![steelmesh](https://github.com/sidelab/steelmesh/raw/master/assets/steelmesh.png)
+![steelmesh](https://github.com/steelmesh/steelmesh/raw/master/assets/steelmesh.png)
 
 Steelmesh is a __distributed application framework__ build on top of [Node.js](http://nodejs.org/) and [CouchDB](http://couchdb.apache.org/) (specifically we love using [Couchbase](http://www.couchbase.org/) community editions).
 
@@ -10,16 +10,16 @@ Steelmesh is a curated set of Node.js packages, along with some [Sidelab](http:/
 
 ### Standalone
 
-![Standalone Server](https://github.com/sidelab/steelmesh/raw/master/assets/arch-standalone.png)
+![Standalone Server](https://github.com/steelmesh/steelmesh/raw/master/assets/arch-standalone.png)
 
 ### Master-Master Replication
 
-![Master-Master Replication](https://github.com/sidelab/steelmesh/raw/master/assets/arch-master-master.png)
+![Master-Master Replication](https://github.com/steelmesh/steelmesh/raw/master/assets/arch-master-master.png)
 
 ### Master-Slave Replication
 
-![Master-Slave Replication](https://github.com/sidelab/steelmesh/raw/master/assets/arch-master-slave.png)
+![Master-Slave Replication](https://github.com/steelmesh/steelmesh/raw/master/assets/arch-master-slave.png)
 
 ### Distributed Architecture
 
-![Distributed Architecture](https://github.com/sidelab/steelmesh/raw/master/assets/arch-distributed.png)
+![Distributed Architecture](https://github.com/steelmesh/steelmesh/raw/master/assets/arch-distributed.png)
