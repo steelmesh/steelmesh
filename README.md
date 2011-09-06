@@ -4,7 +4,11 @@ Steelmesh is a __distributed application framework__ build on top of [Node.js](h
 
 ## What does it do?
 
-Steelmesh is a curated set of Node.js packages, along with some [Sidelab](http://www.sidelab.com) built goodness to make writing distributed, reliable server-side Javascript applications repeatable.
+Steelmesh is designed to assist with managing and scaling Node + Couch applications in a horizontal fashion.  At this stage, Steelmesh is not designed to support partitioning large datasets, but rather to:
+
+1. Provide load distribution for small-medium sized datasets that experience a high traffic load.
+
+2. Provide a manageable interface to a number of Couch + Node instances.
 
 ## Architecture Configurations
 
