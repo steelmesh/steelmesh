@@ -10,6 +10,7 @@
         
     "dependencies": {
         "async": "0.1.x",
+        "cluster", "0.7.x",
         "colors": "0.5.x",
         "comfy": "0.1.x",
         "connect": "1.6.x",
