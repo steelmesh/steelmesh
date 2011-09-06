@@ -27,3 +27,7 @@ Steelmesh is designed to assist with managing and scaling Node + Couch applicati
 ### Distributed Architecture
 
 ![Distributed Architecture](https://github.com/steelmesh/steelmesh/raw/master/assets/arch-distributed.png)
+
+## License
+
+Steelmesh is distributed under an [AGPL license](/steelmesh/steelmesh/blob/master/LICENSE.md)
