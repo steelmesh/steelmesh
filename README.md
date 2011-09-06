@@ -30,4 +30,4 @@ Steelmesh is designed to assist with managing and scaling Node + Couch applicati
 
 ## License
 
-Steelmesh is distributed under an [AGPL license](/steelmesh/steelmesh/blob/master/LICENSE.md)
+Steelmesh is distributed under the Apache License (v2).
