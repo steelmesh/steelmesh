@@ -14,6 +14,8 @@ Steelmesh is designed to assist with managing and scaling Node + Couch applicati
 
 OK.  Just so you know, getting an instance of Steelmesh running is reasonably involved.  Not too tricky, but it might involve some mucking around and the process is still nowhere near as refined as it will be in a few months...
 
+Also, [Sidelab](http://www.sidelab.com/) will be running up a hosted installation of Steelmesh in the near future, so if you are feeling brave, then feel free to [message me](http://github.com/DamonOehlman) and we can look at providing you access once it's available.
+
 ### Step 1: Install CouchDB
 
 Essentially, get an installation of CouchDB running somewhere on your network. I would recommend using one of the [Couchbase](http://couchbase.org/) distributions as they are just lovely to work with.
