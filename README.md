@@ -60,7 +60,7 @@ Operation succcessful
 
 This command creates the steelmesh database and uploads the required [design documents](http://guide.couchdb.org/draft/design.html) into the database.
 
-### Step 6: Clone the Steelmesh repository
+### Step 6: Clone the Steelmesh repository, Install Node Modules
 
 OK, you've made it this far.  Nice job. Now, in a location that you would like to run steelmesh, clone this repository:
 
@@ -73,6 +73,8 @@ Once you have cloned the repository, change into your newly created directory an
 ```
 npm install
 ```
+
+### Step 7: Start the Server
 
 Once the required modules are you should be able to run the following command:
 
@@ -97,7 +99,7 @@ This is a mix of some steelmesh output and output that has been generated from [
 
 At this stage, steelmesh is operational, but not doing a lot.  Time to create an app.
 
-### Step 7: Scaffold an Application
+### Step 8: Scaffold an Application
 
 Now, create a directory somewhere on your local machine.  By default, the name of the folder will become the name of your Steelmesh appliation but that can be changed using the various [Configuration Options](/steelmesh/steelmesh/wiki/Configuration-Options).  Anyway, let's create an application.  I'm going to create a directory called test (because I'm creative like that):
 
@@ -109,7 +111,7 @@ mesh create
 
 Now in the test directory, you should see a number of new files, including an app.js file.  The app.js file is basically the file that contains the information on how the application controls routes, background tasks that it does, etc, etc.  Lots of documentation coming on this... promise.
 
-### Step 8: Publish the Application to Steelmesh
+### Step 9: Publish the Application to Steelmesh
 
 One the application has been created, you can publish the application to a Steelmesh server using the following command:
 
@@ -129,9 +131,11 @@ Finished push. 1-f0ee9c0a7e63e35207220559cf35390e
 Operation succcessful
 ```
 
-### Step 9: Restart the Steelmesh Server
+### Step 10: Restart the Steelmesh Server
 
-Now that you have pushed the application to the steelmesh, restart the steelmesh server (see Step 5).
+Now that you have pushed the application to the steelmesh, restart the steelmesh server (see Step 7).
+
+__NOTE:__ This is a temporary step that is required while we are properly implementing listening to CouchDB change notifications and auto reloading updated applications.
 
 You should now see the following when the server is started:
 
@@ -146,7 +150,9 @@ synchronized application resources
   info - listening for connections
 ```
 
-__NOTE:__ This is a temporary step that is required while we are properly implementing listening to CouchDB change notifications and auto reloading updated applications:
+#### Regarding 'Bad Argument' Errors
+
+You will currently see Steelmesh generate some 'Bad Argument' errors on load, we are looking into this (Issue #5).  From my own testing, it seems that this doesn't stop steelmesh working.
 
 ### Step 10: Start Nginx
 
