@@ -150,10 +150,6 @@ synchronized application resources
   info - listening for connections
 ```
 
-#### Regarding 'Bad Argument' Errors
-
-You will currently see Steelmesh generate some 'Bad Argument' errors on load, we are looking into this (Issue #5).  From my own testing, it seems that this doesn't stop steelmesh working.
-
 ### Step 10: Start Nginx
 
 Before we test our application, we will need to start nginx to act a reverse-proxy to both our CouchDB server and Node server.  Steelmesh comes with a [prebuilt nginx configuration](https://github.com/steelmesh/steelmesh/blob/master/nginx/conf/nginx.conf) that routes traffic to the appropriate destination.
