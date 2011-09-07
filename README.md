@@ -68,7 +68,13 @@ OK, you've made it this far.  Nice job. Now, in a location that you would like t
 git clone git://github.com/steelmesh/steelmesh.git
 ```
 
-Once you have cloned the repository, change into your newly created directory and you should be able to run the following command:
+Once you have cloned the repository, change into your newly created directory and pull down the required node_modules:
+
+```
+npm install
+```
+
+Once the required modules are you should be able to run the following command:
 
 ```
 node debug-server.js

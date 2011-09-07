@@ -10,7 +10,7 @@
         
     "dependencies": {
         "async": "0.1.x",
-        "cluster", "0.7.x",
+        "cluster": "0.7.x",
         "colors": "0.5.x",
         "comfy": "0.1.x",
         "connect": "1.6.x",
@@ -18,7 +18,8 @@
         "dust": "0.3.x",
         "log": "1.2.x",
         "quip": "0.0.2",
-        "request": "2.1.x"
+        "request": "2.1.x",
+        "eyes": "0.1.x"
     },
     
     "devDependencies": {
