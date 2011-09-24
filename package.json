@@ -12,13 +12,13 @@
         "async": "0.1.x",
         "cluster": "0.7.x",
         "comfy": "0.1.x",
-        "connect": "1.6.x",
         "cron": "0.1.x",
+        "express": "2.4.x",
         "log": "1.2.x",
-        "quip": "0.0.2",
+        "mesh": "0.0.x",
         "request": "2.1.x",
         "out": "0.x.x",
-        "eyes": "0.1.x"
+        "underscore": "1.1.x"
     },
     
     "devDependencies": {
