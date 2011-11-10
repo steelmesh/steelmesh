@@ -6,17 +6,16 @@
     "version": "0.0.2",
     
     "main": "server.js",
-    "engines": { "node": "0.4.x" },
+    "engines": { "node": ">= 0.4.x < 0.7.0" },
         
     "dependencies": {
         "async": "0.1.x",
-        "cluster": "0.7.x",
         "comfy": "0.1.x",
         "cron": "0.1.x",
-        "express": "2.4.x",
+        "express": "2.5.x",
         "log": "1.2.x",
         "mesh": "0.0.x",
-        "request": "2.1.x",
+        "request": "2.x.x",
         "out": "0.x.x",
         "underscore": "1.1.x"
     },

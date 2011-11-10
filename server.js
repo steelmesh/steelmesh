@@ -1,4 +1,3 @@
-require('./lib/steelmesh-cluster').init(require('./lib/steelmesh'), function(mesh) {
-    mesh.cluster.listen(3001);
+require('./lib/cluster').init(require('./lib/server'), function(mesh) {
     mesh.init();
 });
