@@ -10,11 +10,11 @@
         
     "dependencies": {
         "async": "0.1.x",
-        "comfy": "0.1.x",
         "cron": "0.1.x",
         "express": "2.5.x",
         "log": "1.2.x",
         "mesh": "0.0.x",
+        "nano": "0.9.x",
         "request": "2.x.x",
         "out": "0.x.x",
         "underscore": "1.1.x"
@@ -30,7 +30,7 @@
     },
     
     "bugs": {
-        "web": "http://github.com/steelmesh/steelmesh/issues"
+        "url": "http://github.com/steelmesh/steelmesh/issues"
     },
     
     "contributors": [
