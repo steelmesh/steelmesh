@@ -1,4 +1,4 @@
-![steelmesh](https://github.com/steelmesh/steelmesh/raw/master/assets/steelmesh.png)
+![steelmesh](https://github.com/steelmesh/steelmesh/raw/master/assets/steelmesh-logo.png)
 
 Steelmesh is a __distributed application framework__ build on top of [Node.js](http://nodejs.org/) and [CouchDB](http://couchdb.apache.org/) (specifically we love using [Couchbase](http://www.couchbase.org/) community editions).  
 
