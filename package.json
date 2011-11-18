@@ -10,7 +10,6 @@
         
     "dependencies": {
         "async": "0.1.x",
-        "cron": "0.1.x",
         "express": "2.5.x",
         "log": "1.2.x",
         "mesh": "0.1.x",
