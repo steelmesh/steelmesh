@@ -1,0 +1,5 @@
+{
+    "apploader": "couch",
+    "couchurl": "http://localhost:5984",
+    "meshdb": "steelmesh"
+}

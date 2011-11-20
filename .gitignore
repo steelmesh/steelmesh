@@ -1,10 +1,8 @@
 nginx/
 pids/
 lib/apps/
+config/development.json
 changelog/
 node_modules
 logs/
 .sock
-stack.log
-_jobdata.json
-settings.json
