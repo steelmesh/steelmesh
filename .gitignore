@@ -6,3 +6,4 @@ changelog/
 node_modules
 logs/
 .sock
+changestate.json
