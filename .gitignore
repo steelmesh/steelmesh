@@ -1,5 +1,3 @@
-nginx/
-pids/
 lib/apps/
 config/development.json
 changelog/
@@ -7,3 +5,4 @@ node_modules
 logs/
 .sock
 changestate.json
+npm-debug.log
