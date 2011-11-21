@@ -1,5 +1,11 @@
 {
+    "server": {
+        "port": 3000
+    },
+    
     "apploader": "couch",
     "couchurl": "http://localhost:5984",
-    "meshdb": "steelmesh"
+    "meshdb": "steelmesh",
+    
+    "logFlushInterval": 30000
 }
