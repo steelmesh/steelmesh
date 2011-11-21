@@ -75,7 +75,7 @@ npm install
 Once the required modules are you should be able to run the following command:
 
 ```
-node debug-server.js
+node server.js
 ```
 
 All being well, you should see output similar to the following:
@@ -145,30 +145,6 @@ synchronized application resources
   info - worker 1 spawned
   info - listening for connections
 ```
-
-## Optional (Run Behind Nginx)
-
-### Step 10: Install Nginx
-
-By default, Steelmesh is designed to run behind [nginx](http://nginx.org/) as this provides an ideal front-door to both CouchDB and Node.  So if you don't have nginx installed already, then go get it...
-
-### Step 11: Start Nginx (Optional)
-
-Before we test our application, we will need to start nginx to act a reverse-proxy to both our CouchDB server and Node server.  Steelmesh comes with a [prebuilt nginx configuration](https://github.com/steelmesh/steelmesh/blob/master/nginx/conf/nginx.conf) that routes traffic to the appropriate destination.
-
-The simplest way to start nginx is by changing to directory you installed steelmesh in and running the following command:
-
-```
-sudo nginx -p nginx/
-```
-
-This tells nginx to use the `steelmesh/nginx` directory as the nginx root, so the configuration file is loaded from the `conf` directory automatically.  __NOTE:__ The `sudo` command is required as the configuration by default listens on port 80 and binding to ports below 1024 (I think) requires superuser privileges.
- 
-### Step 12: See it Working (Hopefully)
-
-If everything has gone well, then you should be able to view the following url (if you are running locally, and called your application is called `test`):
-
-[http://localhost/test/time](http://localhost/test/time)
 
 ## Steelmesh Addins
 
