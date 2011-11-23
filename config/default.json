@@ -1,7 +1,11 @@
 {
     "server": {
-        "port": 3000,
+        "port": 6633,
         "resourceTimeout": 10000
+    },
+    
+    "dashboard": {
+        "port": 3274
     },
     
     "apploader": "couch",
