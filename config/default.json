@@ -16,5 +16,9 @@
     "couchurl": "http://localhost:5984",
     "meshdb": "steelmesh",
     
+    "admin": {
+        "couchurl": "http://admin:steelmesh@localhost:5984"
+    },
+    
     "logFlushInterval": 30000
 }
