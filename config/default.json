@@ -8,6 +8,10 @@
         "port": 3274
     },
     
+    "discovery": {
+        "type": "none"
+    },
+    
     "apploader": "couch",
     "couchurl": "http://localhost:5984",
     "meshdb": "steelmesh",
