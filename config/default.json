@@ -20,5 +20,10 @@
         "couchurl": "http://admin:steelmesh@localhost:5984"
     },
     
+    "redis": {
+        "port": 6379,
+        "host": "localhost"
+    },
+    
     "logFlushInterval": 30000
 }

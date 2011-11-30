@@ -15,13 +15,13 @@
         "express": "2.5.x",
         "mesh": "0.1.x",
         "nano": "0.9.x",
+        "redis", ">= 0.7.1",
         "request": "2.x.x",
         "out": "0.x.x",
         "underscore": "1.2.x"
     },
     
     "devDependencies": {
-        "vows": "0.5.x"
     },
     
     "repository": {
