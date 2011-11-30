@@ -11,10 +11,10 @@
     "dependencies": {
         "async": "0.1.x",
         "config": "0.4.x",
-        "changeling": ">= 0.0.4",
+        "changemate": ">= 0.1.0",
         "express": "2.5.x",
         "mesh": "0.1.x",
-        "nano": "0.9.x",
+        "nano": ">= 0.9.5",
         "redis", ">= 0.7.1",
         "request": "2.x.x",
         "out": "0.x.x",
