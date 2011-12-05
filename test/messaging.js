@@ -38,4 +38,13 @@ describe('messaging via redis', function() {
         
         redisClient.publish(DEFAULT_CHANNEL, 'hello:_:{"test": true, "name": "Tom"}');
     });
+    
+    it('should ignore messages from itself', function(done) {
+       messenger.once('hello from', function(payload) {
+           assert.equal(payload, 'not myself');
+           done();
+       });
+       
+       messenger.send('hello from', 'myself');
+    });
 });
