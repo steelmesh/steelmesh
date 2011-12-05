@@ -2,7 +2,6 @@ var assert = require('assert'),
     config = require('config'),
     redis = require('redis'),
     redisClient,
-    Messenger = require('../lib/helpers/messaging').Messenger,
     messenger,
     DEFAULT_CHANNEL = 'steelmesh';
 
@@ -13,7 +12,7 @@ describe('messaging via redis', function() {
     });
     
     it('should be able to subscribe to a channel', function(done) {
-        messenger = new Messenger();
+        messenger = require('../lib/helpers/messaging').create();
         messenger.client.on('subscribe', function(channel, count) {
             assert.equal(channel, DEFAULT_CHANNEL);
             done();
@@ -26,7 +25,7 @@ describe('messaging via redis', function() {
             done();
         });
         
-        redisClient.publish(DEFAULT_CHANNEL, 'hello:_:"test"');
+        redisClient.publish(DEFAULT_CHANNEL, '0:_:hello:_:"test"');
     });
     
     it('should be able to receive object messages', function(done) {
@@ -36,7 +35,7 @@ describe('messaging via redis', function() {
             done();
         });
         
-        redisClient.publish(DEFAULT_CHANNEL, 'hello:_:{"test": true, "name": "Tom"}');
+        redisClient.publish(DEFAULT_CHANNEL, '0:_:hello:_:{"test": true, "name": "Tom"}');
     });
     
     it('should ignore messages from itself', function(done) {
@@ -46,5 +45,6 @@ describe('messaging via redis', function() {
        });
        
        messenger.send('hello from', 'myself');
+       redisClient.publish(DEFAULT_CHANNEL, '0:_:hello from:_:"not myself"');
     });
 });
