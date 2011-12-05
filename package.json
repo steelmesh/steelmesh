@@ -15,6 +15,7 @@
         "debug": "*",
         "express": "2.5.x",
         "mesh": ">= 0.2.0",
+        "mime": "1.x.x",
         "nano": ">= 0.9.5",
         "redis": ">= 0.7.1",
         "request": "2.x.x",
