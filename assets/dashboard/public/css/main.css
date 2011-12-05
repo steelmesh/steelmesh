@@ -1,0 +1,39 @@
+body {
+    margin-top: 50px;
+}
+
+.sm-exception {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.sm-status {
+    padding: 10px;
+    color: #e8e8e8;
+}
+
+.sm-status .label {
+    margin-left: 5px;
+}
+
+#exception-details {
+    width: 900px;
+    margin: -240px 0 0 -420px;
+}
+
+.well {
+    padding: 10px;
+}
+
+table.repljob {
+    height: 0px;
+    overflow: hidden;
+}
+
+table.repljob th {
+    width: 120px;
+}
+
+table.repljob.active {
+    height: auto;
+}
