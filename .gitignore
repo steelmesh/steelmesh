@@ -1,5 +1,6 @@
 lib/apps/
 config/development.json
+config/production.json
 changelog/
 node_modules
 logs/
