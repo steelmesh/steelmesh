@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% for system in systems %}
+<div class="sm-system">
+	<h2 class="{% if system.available %}available{% endif %}">{{ system.id }} </h2>
+	{% for sub in system.subsystems %}
+	<div class="alert-message {% if sub.available %}success{% else %}error{% endif %}">
+	{{ forloop.key }}
+	</div>
+	{% empty %}
+	<div class="alert-message info">no subsystems reported</div>
+	{% endfor %}
+</div>
+{% endfor %}
+{% endblock %}

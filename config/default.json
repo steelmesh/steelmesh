@@ -4,6 +4,11 @@
         "resourceTimeout": 10000
     },
     
+    "monitor": {
+        "checkInterval": 300,
+        "checkTimeout": 30
+    },
+    
     "dashboard": {
         "port": 3274
     },

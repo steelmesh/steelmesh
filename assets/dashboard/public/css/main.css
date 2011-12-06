@@ -37,3 +37,11 @@ table.repljob th {
 table.repljob.active {
     height: auto;
 }
+
+.sm-system h2 {
+    color: red;
+}
+
+.sm-system h2.available {
+    color: green;
+}
