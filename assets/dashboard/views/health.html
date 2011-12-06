@@ -2,8 +2,14 @@
 
 {% block content %}
 {% for system in systems %}
-<div class="sm-system">
-	<h2 class="{% if system.available %}available{% endif %}">{{ system.id }} </h2>
+	<div class="sm-system">
+		{% if system.available %}
+		<span class="label success">available</span>
+		{% else %}
+		<span class="label important">offline</span>
+		{% endif %}
+		<h2>{{ system.id }}</h2>
+	</div>
 	{% for sub in system.subsystems %}
 	<div class="alert-message {% if sub.available %}success{% else %}error{% endif %}">
 	{{ forloop.key }}
@@ -11,6 +17,5 @@
 	{% empty %}
 	<div class="alert-message info">no subsystems reported</div>
 	{% endfor %}
-</div>
 {% endfor %}
 {% endblock %}

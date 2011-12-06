@@ -1,4 +1,5 @@
 assets/dashboard/uploads
+assets/dashboard/package-archive
 lib/apps/
 config/development.json
 config/production.json

@@ -38,10 +38,24 @@ table.repljob.active {
     height: auto;
 }
 
-.sm-system h2 {
-    color: red;
+.sm-system {
+    overflow: hidden;
 }
 
-.sm-system h2.available {
-    color: green;
+.sm-system h2 {
+    float: left;
+}
+
+.sm-system .label {
+    margin: 8px 10px 0 0;
+    float: left;
+    padding: 2px 10px;
+}
+
+.sm-statustext {
+    padding: 10px;
+}
+
+.sm-spinner {
+    margin-right: 20px;
 }

@@ -1,18 +1,22 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-{% if packages.length > 0 %}
-	<h2>Deploy an Uploaded Package:</h2>
-	{% for pkg in packages %}
-		<h3>{{ pkg.name }}</h3>
-		<ul>
-			{% for ver in pkg.versions %}
-			<li><a href="/deploy/{{ pkg.name }}?version={{ ver }}">{{ ver }}</a></li>
-			{% endfor %}
-		</ul>
-	{% endfor %}
-{% endif %}
 
+{% for pkg in packages %}
+<h2>{{ pkg.name }}</h2>
+<div class='sm-packages'>
+	{% for ver in pkg.versions %}
+	<a class="btn {% if forloop.first %}primary{% endif %}" data-package="{{ pkg.name }}" data-version="{{ ver }}" href="#">Version: {{ ver}}</a>
+	{% if forloop.first %}<h5>Previous Versions:</h5>{% endif %}
+	{% endfor %}
+</div>
+{% empty %}
+<div class="alert-message block-message">
+	There are no packages available for installation.
+</div>
+{% endfor %}
+
+<!-- 
 <h2>Upload a new Package:</h2>
 
 <p>Select the application archive to upload:</p>
@@ -30,4 +34,5 @@
 		<button type="reset" class="btn">Cancel</button>
 	</div>
 </form>
+-->
 {% endblock %}

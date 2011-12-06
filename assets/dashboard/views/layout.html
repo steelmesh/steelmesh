@@ -52,15 +52,11 @@
         </div>
       </div>
     </div>
-	
-    <div class="container">
-		{% for msg in messages %}
-		<div class="alert-message {{ msg.type }}" data-alert="true">
-			<a class="close" href="#">×</a>
-			<p>{{ msg.text }}</p>
-		</div>
-		{% endfor %}
 
+    <div id="status" class="container">
+	</div>
+	
+    <div id="main" class="container">
 		{% block content %}
 		To be completed...
 		{% endblock %}
@@ -76,6 +72,7 @@
 	<script src="/js/bootstrap-twipsy.js"></script>
 	<script src="/js/bootstrap-popover.js"></script>
 	<script src="/js/handlebars-1.0.0.beta.4.js"></script>
+	<script src="/js/spin.min.js"></script>
 	<script src="/js/dash.js"></script>
   </body>
 </html>
