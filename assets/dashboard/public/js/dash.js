@@ -217,4 +217,5 @@ SteelmeshDash = (function() {
     setInterval(_updateStatus, 500);
     
     $().alert();
+    $('.topbar').dropdown();
 })();
