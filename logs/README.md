@@ -1,1 +1,0 @@
-steelmesh logs directory
