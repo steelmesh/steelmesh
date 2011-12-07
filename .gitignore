@@ -3,6 +3,7 @@ assets/dashboard/package-archive
 lib/apps/
 config/development.json
 config/production.json
+config/runtime.json
 changelog/
 node_modules
 logs/
