@@ -206,6 +206,23 @@ SteelmeshDash = (function() {
         });
     } // _updateStatus
     
+    
+    /* exports */
+    
+    function monitorServerStatus(callback) {
+        setInterval(function() {
+            $.ajax({
+                url: '/up',
+                dataType: 'json',
+                success: function(data) {
+                    if (callback) {
+                        callback(data.server);
+                    }
+                }
+            });
+        }, 500);
+    }
+    
     $('a.log').click(function() {
         $('.pills li').removeClass('active');
         $(this).parent().addClass('active');
@@ -218,4 +235,8 @@ SteelmeshDash = (function() {
     
     $().alert();
     $('.topbar').dropdown();
+    
+    return {
+        monitorServerStatus: monitorServerStatus
+    };
 })();

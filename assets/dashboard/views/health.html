@@ -1,6 +1,10 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<h2>Server Reported Status</h2>
+<div id="sm-overall-status" class="alert-message">pending...</div>
+
+<h2>Individual Systems</h2>
 {% for system in systems %}
 	<div class="sm-system">
 		{% if system.available %}
@@ -18,4 +22,21 @@
 	<div class="alert-message info">no subsystems reported</div>
 	{% endfor %}
 {% endfor %}
+
+<script>
+$(function() {
+	SteelmeshDash.monitorServerStatus(function(status) {
+		var statusDiv = $('#sm-overall-status');
+		
+		// reset the classname
+		statusDiv[0].className = 'alert-message';
+		
+		// update the contents
+		statusDiv
+			.html(status)
+			.addClass(status === 'up' ? 'success' : 'error')
+			.show();
+	});
+});
+</script>
 {% endblock %}
