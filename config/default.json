@@ -1,7 +1,8 @@
 {
     "server": {
         "port": 6633,
-        "resourceTimeout": 10000
+        "resourceTimeout": 10000,
+        "workers": "auto"
     },
     
     "monitor": {
