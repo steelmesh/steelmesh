@@ -10,6 +10,7 @@ body {
 .sm-status {
     padding: 10px;
     color: #e8e8e8;
+    white-space: nowrap;
 }
 
 .sm-status .label {

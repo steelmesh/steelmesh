@@ -186,11 +186,11 @@ SteelmeshDash = (function() {
             url: '/status',
             dataType: 'json',
             success: function(data) {
-                var label = $('.sm-status .label'),
+                var label = $('.sm-server-status'),
                     status = data.status || 'unknown';
                     
                 // reset the label classes
-                label[0].className = 'label';
+                label[0].className = 'sm-server-status label';
                 
                 // update the text
                 label.html(status);

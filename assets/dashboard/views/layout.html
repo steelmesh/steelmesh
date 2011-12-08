@@ -47,8 +47,9 @@
 			</ul>
 
 		  <div class="pull-right sm-status">status:
-			<span class="label {% if online %}success{% endif %}">{{ status }}</span>
+			<span class="sm-server-status label {% if online %}success{% endif %}">{{ status }}</span><span class="label {% if dash.mode == 'primary' %}notice{% endif %}">{{ dash.mode }}</span>
 		  </div>
+		
         </div>
       </div>
     </div>
