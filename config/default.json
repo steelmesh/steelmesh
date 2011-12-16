@@ -7,7 +7,8 @@
     
     "monitor": {
         "checkInterval": 300,
-        "checkTimeout": 30
+        "checkTimeout": 30,
+        "reconnectDelay": 30
     },
     
     "dashboard": {
@@ -31,5 +32,5 @@
         "host": "localhost"
     },
     
-    "logFlushInterval": 30000
+    "logFlushInterval": 1000
 }
