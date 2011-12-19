@@ -17,6 +17,10 @@ body {
     margin-left: 5px;
 }
 
+.template {
+    display: none;
+}
+
 #exception-details {
     width: 900px;
     margin: -240px 0 0 -420px;

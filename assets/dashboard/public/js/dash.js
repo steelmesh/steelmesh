@@ -1,4 +1,6 @@
 SteelmeshDash = (function() {
+    var _templates = {};
+    
     function _dashAction(targetUrl, callback) {
         $.ajax({
             url: targetUrl,
@@ -33,6 +35,16 @@ SteelmeshDash = (function() {
             $('.sm-packages a').removeClass('disabled');
         });
     } // _deployPackage
+    
+    function _loadTemplate(target) {
+        var $target = $(target),
+            templateId = $target.data('template') || (target + '-template'),
+            templateText = $(templateId)[0].innerText
+                .replace(/\{\[/g, '{{')
+                .replace(/\]\}/g, '}}');
+        
+        return _templates[target] = Handlebars.compile(templateText);
+    } // _loadTemplate
     
     function _showMessage(msg, timeout) {
         if (! msg) { return; }
@@ -114,6 +126,25 @@ SteelmeshDash = (function() {
     
     /* exports */
     
+    function fill(target) {
+        // find the target
+        var $target = $(target),
+            template = _templates[target];
+            
+        // if we don't have a compiled template, do that now
+        if (! template) {
+            template = _loadTemplate(target);
+        }
+        
+        $.ajax({
+            url: $target.data('url'),
+            success: function(data) {
+                $target.html(template(data));
+                $target.show();
+            }
+        });
+    };
+    
     function monitorServerStatus(callback) {
         $.ajax({
             url: '/up',
@@ -137,6 +168,7 @@ SteelmeshDash = (function() {
     $('.topbar').dropdown();
     
     return {
+        fill: fill,
         monitorServerStatus: monitorServerStatus
     };
 })();

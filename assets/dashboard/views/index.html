@@ -1,6 +1,21 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+<script id="sm-versions-template" type="text/x-handlebars-template">
+<h3>Steelmesh</h3>
+<p>{[ steelmesh ]}</p>
+
+<h3>Node Components</h3>
+<table class="bordered-table">
+{[#each node]}
+	<tr>
+		<td>{[ system ]}</td>
+		<td>{[ version ]}</td>
+	</tr>
+{[/each]}
+</table>
+</script>
+
 <h2>System Health</h2>
 <div id="sm-overall-status" class="alert-message">pending...</div>
 
@@ -23,8 +38,14 @@
 	{% endfor %}
 {% endfor %}
 
+<hr />
+<h2>Software Versions</h2>
+<div id="sm-versions" data-url="/version"></div>
+
 <script>
 $(function() {
+	SteelmeshDash.fill('#sm-versions');
+	
 	SteelmeshDash.monitorServerStatus(function(status) {
 		var statusDiv = $('#sm-overall-status');
 		
