@@ -4,13 +4,17 @@ var assert = require('assert'),
     config = require('config'),
     logPath = path.resolve(__dirname, '../logs'),
     logger = require('../lib/helpers/logger'),
-    log = logger('test.log');
+    log = logger('test');
     
 describe('logging', function() {
     before(function(done) {
         fs.unlink(path.join(logPath, 'test.log'), function(err) {
             done();
         });
+    });
+    
+    after(function(done) {
+        fs.unlink(path.join(logPath, 'test.log'), done);
     });
     
     it('should support logging to different levels', function() {
