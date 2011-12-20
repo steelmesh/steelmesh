@@ -1,4 +1,4 @@
-![steelmesh](https://github.com/steelmesh/steelmesh/raw/master/assets/steelmesh-logo.png)
+![steelmesh](https://github.com/steelmesh/steelmesh-assets/raw/master/logo/steelmesh-logo.png)
 
 Steelmesh is a __distributed application framework__ build on top of [Node.js](http://nodejs.org/) and [CouchDB](http://couchdb.apache.org/) (specifically we love using [Couchbase](http://www.couchbase.org/) community editions).  
 
@@ -158,19 +158,19 @@ Out of the box, Steelmesh is basically [Express](http://expressjs.org/) on [Node
 
 ### Standalone
 
-![Standalone Server](https://github.com/steelmesh/steelmesh/raw/master/assets/arch-standalone.png)
+![Standalone Server](https://github.com/steelmesh/steelmesh-assets/raw/master/diagrams/arch-standalone.png)
 
 ### Master-Master Replication
 
-![Master-Master Replication](https://github.com/steelmesh/steelmesh/raw/master/assets/arch-master-master.png)
+![Master-Master Replication](https://github.com/steelmesh/steelmesh-assets/raw/master/diagrams/arch-master-master.png)
 
 ### Master-Slave Replication
 
-![Master-Slave Replication](https://github.com/steelmesh/steelmesh/raw/master/assets/arch-master-slave.png)
+![Master-Slave Replication](https://github.com/steelmesh/steelmesh-assets/raw/master/diagrams/arch-master-slave.png)
 
 ### Distributed Architecture
 
-![Distributed Architecture](https://github.com/steelmesh/steelmesh/raw/master/assets/arch-distributed.png)
+![Distributed Architecture](https://github.com/steelmesh/steelmesh-assets/raw/master/diagrams/arch-distributed.png)
 
 ## License
 
