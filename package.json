@@ -15,7 +15,6 @@
         "changemate": ">= 0.1.0",
         "debug": "*",
         "express": "2.5.x",
-        "meta-fs": "*",
         "mime": "1.x.x",
         "nano": ">= 0.9.5",
         "plug": ">= 0.0.3",
