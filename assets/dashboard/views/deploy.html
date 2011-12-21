@@ -7,7 +7,7 @@
 <div class='sm-packages'>
 	{% for ver in pkg.versions %}
 	<a class="btn {% if forloop.first %}primary{% endif %}" data-package="{{ pkg.name }}" data-version="{{ ver }}" href="#">Version: {{ ver}}</a>
-	{% if forloop.first %}<h5>Previous Versions:</h5>{% endif %}
+	{% if forloop.first and !forloop.last %}<h5>Previous Versions:</h5>{% endif %}
 	{% endfor %}
 </div>
 {% empty %}
