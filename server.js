@@ -1,1 +1,1 @@
-require('./lib/server').start();
+require('./lib/server')();
