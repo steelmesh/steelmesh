@@ -3,7 +3,7 @@
     "description": "CouchDB distribution and management of Node.js applications",
     "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
     "tags": ["couchdb", "distributed"],
-    "version": "0.8.8",
+    "version": "0.8.9",
     
     "main": "server.js",
     "engines": { "node": ">= 0.4.x < 0.7.0" },
@@ -17,11 +17,12 @@
         "express": "2.5.x",
         "mime": "1.x.x",
         "nano": ">= 0.9.5",
+        "neuron": "0.4.x",
         "plug": ">= 0.0.3",
-        "redis": ">= 0.7.1",
+        "redis": "0.7.x",
         "replimate": ">= 0.1.0",
         "request": "2.x.x",
-        "swig": ">= 0.8.0",
+        "swig": "0.8.x",
         "tar": ">= 0.1.8",
         "out": "0.x.x",
         "underscore": "1.2.x"
