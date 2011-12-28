@@ -8,6 +8,6 @@ changelog/
 node_modules
 logs/
 .sock
-changestate.json
+changemachine.json
 npm-debug.log
 steelmesh.pid
