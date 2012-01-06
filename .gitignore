@@ -11,3 +11,4 @@ logs/
 changemachine.json
 npm-debug.log
 steelmesh.pid
+docs/_build
