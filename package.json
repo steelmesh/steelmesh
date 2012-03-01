@@ -10,23 +10,22 @@
         
     "dependencies": {
         "async": "0.1.x",
-        "attachmate": ">= 0.0.5",
+        "attachmate": "0.1.x",
         "config": "0.4.x",
-        "changemachine": ">= 0.3.2",
+        "changemachine": "0.3.x",
         "dateformat": "1.0.2-1.2.3",
         "debug": "*",
         "express": "2.5.x",
-        "log4js": "0.4.x",
         "mime": "1.x.x",
-        "nano": ">= 0.9.5",
-        "plug": ">= 0.0.3",
+        "nano": "1.3.x",
+        "plug": "0.1.x",
         "redis": "0.7.x",
-        "replimate": ">= 0.1.0",
-        "request": "2.x.x",
-        "swig": "0.8.x",
-        "tar": ">= 0.1.8",
-        "out": "0.x.x",
-        "underscore": "1.2.x"
+        "replimate": "0.2.x",
+        "request": "2.9.x",
+        "swig": "0.11.x",
+        "tar": "0.1.x",
+        "out": "*",
+        "underscore": "1.3.x"
     },
     
     "devDependencies": {
