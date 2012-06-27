@@ -2,6 +2,29 @@ body {
     margin-top: 50px;
 }
 
+footer {
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    color: #555;
+    width: 100%;
+    background: #aaa;
+    padding-top: 10px;
+}
+
+h2 {
+    margin: 10px 0 5px;
+}
+
+h4 {
+    margin: 10px 0 4px;
+}
+
+table td, table th {
+    padding: 3px 6px;
+    min-width: 100px;
+}
+
 .sm-exception {
     cursor: pointer;
     cursor: hand;
@@ -55,6 +78,8 @@ table.repljob.active {
     margin: 8px 10px 0 0;
     float: left;
     padding: 2px 10px;
+    min-width: 70px;
+    text-align: center;
 }
 
 .sm-statustext {

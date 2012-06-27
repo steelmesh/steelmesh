@@ -1,5 +1,10 @@
 # Steelmesh Changelog
 
+## 0.9.7
+
+- Updated package deps to latest stable versions.
+- Added worker death conditions when processes take too much memory.
+
 ## 0.9.1
 
 - Fixed deployment dash plugin returning results when not all versions have been loaded.

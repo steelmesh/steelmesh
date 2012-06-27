@@ -6,11 +6,13 @@
 <h2>{{ pkg.name }}</h2>
 <div class='sm-packages'>
 	{% for ver in pkg.versions %}
-	<a class="btn {% if forloop.first %}primary{% endif %}" data-package="{{ pkg.name }}" data-version="{{ ver }}" href="#">Version: {{ ver}}</a>
-	{% if forloop.first and !forloop.last %}<h5>Previous Versions:</h5>{% endif %}
+	    <a class="{% if forloop.first %}btn-primary{% else %}btn{% endif %}" data-package="{{ pkg.name }}" data-version="{{ ver }}" href="#">Version: {{ ver}}</a>
+    	{% if loop.first and !loop.last %}
+    	    <h4>Previous Versions:</h4>
+    	{% endif %}
 	{% endfor %}
 </div>
-{% empty %}
+{% else %}
 <div class="alert-message block-message">
 	There are no packages available for installation.
 </div>

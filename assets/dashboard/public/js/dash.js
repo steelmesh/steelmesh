@@ -53,12 +53,12 @@ SteelmeshDash = (function() {
         var msgDiv = 
             $('#status')
                 .append(
-                    '<div class="alert-message ' + (msg.type || '') + '" data-alert="true">' + 
+                    '<div class="label label-' + (msg.type || '') + '" data-alert="true">' + 
                     '<a class="close" href="#">×</a>' + 
                     '<p>' + (msg.text || '') + '</p>' + 
                     '</div>'
                 )
-                .find('.alert-message:last');
+                .find('.label:last');
                 
         setTimeout(function() {
             msgDiv.fadeOut(function() {
@@ -115,7 +115,7 @@ SteelmeshDash = (function() {
                 // apply any extra styles
                 switch (status) {
                     case 'online': {
-                        label.addClass('success');
+                        label.addClass('label-success');
                         break;
                     }
                 }
@@ -165,8 +165,8 @@ SteelmeshDash = (function() {
     setInterval(_updateStatus, 500);
     
     $().alert();
-    $('.topbar').dropdown();
-    
+    $('.dropdown-toggle').dropdown();
+
     return {
         fill: fill,
         monitorServerStatus: monitorServerStatus

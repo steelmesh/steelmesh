@@ -12,6 +12,7 @@
     <![endif]-->
 
 	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
 	<link rel='stylesheet' href='/css/main.css'>
 	<script src="/js/jquery-1.7.1.min.js"></script>
 	
@@ -24,30 +25,43 @@
   </head>
 
 <body>
-    <div class="topbar">
-      <div class="fill">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="/">{{ title }}</a>
 
 			<ul class="nav">
 			{% for navitem in nav %}
-				<li>
-					{% if navitem.items %}
-					<a href="#" class="dropdown-toggle">{{ navitem.title }}</a>
+			    {% if navitem.items %}
+				<li class="dropdown" id="menu{{ loop.index }}">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#menu{{ loop.index }}">
+					    {{ navitem.title }}
+					    <b class="caret"></b>
+					</a>
 					<ul class="dropdown-menu">
 						{% for subitem in navitem.items %}
 						<li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
 						{% endfor %}
 					</ul>
-					{% else %}
-					<a href="{{ navitem.url }}">{{ navitem.title }}</a>
-					{% endif %}
 				</li>
+				{% else %}
+				<li><a href="{{ navitem.url }}">{{ navitem.title }}</a></li>
+				{% endif %}
 			{% endfor %}
 			</ul>
 
 		  <div class="pull-right sm-status">status:
-			<span class="sm-server-status label {% if online %}success{% endif %}">{{ status }}</span><span class="label {% if dash.mode == 'primary' %}notice{% endif %}">{{ dash.mode }}</span>
+		    {% if online %}
+		        <span class="sm-server-status label label-success">{{ status }}</span>
+		    {% else %}
+		        <span class="sm-server-status label">{{ status }}</span>
+		    {% endif %}
+		      
+			{% if dash.mode == 'primary' %}
+			    <span class="label label-info">{{ dash.mode }}</span>
+			{% else %}
+			    <span class="label">{{ dash.mode }}</span>
+			{% endif %}
 		  </div>
 		
         </div>
@@ -61,17 +75,17 @@
 		{% block content %}
 		To be completed...
 		{% endblock %}
-
-	     <footer>
-	       <p>&copy; Sidelab 2011</p>
-	     </footer>
-
     </div> <!-- /container -->
 
+    <footer>
+      <p>&copy; Sidelab 2012</p>
+    </footer>
+
+    <script src="/js/bootstrap.min.js"></script>    
 	<script src="/js/bootstrap-dropdown.js"></script>
-	<script src="/js/bootstrap-alerts.js"></script>
+	<script src="/js/bootstrap-alert.js"></script>
 	<script src="/js/bootstrap-modal.js"></script>
-	<script src="/js/bootstrap-twipsy.js"></script>
+	<script src="/js/bootstrap-tooltip.js"></script>
 	<script src="/js/bootstrap-popover.js"></script>
 	<script src="/js/handlebars-1.0.0.beta.4.js"></script>
 	<script src="/js/spin.min.js"></script>

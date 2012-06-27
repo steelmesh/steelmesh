@@ -2,39 +2,46 @@
 
 {% block content %}
 <script id="sm-versions-template" type="text/x-handlebars-template">
-<h3>Steelmesh</h3>
-<p>{[ steelmesh ]}</p>
+<p><strong>Steelmesh Version: <code>{[ steelmesh ]}</code></strong></p>
 
 <h3>Node Components</h3>
-<table class="bordered-table">
+<table class="table-bordered table-striped">
+<thead>
+    <tr>
+        <th>Component</th>
+        <th>Version</th>
+    </tr>
+</thead>
+<tbody>
 {[#each node]}
 	<tr>
 		<td>{[ system ]}</td>
 		<td>{[ version ]}</td>
 	</tr>
 {[/each]}
+</tbody>
 </table>
 </script>
 
 <h2>System Health</h2>
-<div id="sm-overall-status" class="alert-message">pending...</div>
+<div id="sm-overall-status" class="alert">pending...</div>
 
 <h3>Individual Systems</h3>
 {% for system in systems %}
 	<div class="sm-system">
 		{% if system.available %}
-		<span class="label success">available</span>
+		<span class="label label-success">available</span>
 		{% else %}
-		<span class="label important">offline</span>
+		<span class="label label-important">offline</span>
 		{% endif %}
-		<h2>{{ system.id }}</h2>
+		<h4>{{ system.id }}</h4>
 	</div>
 	{% for sub in system.subsystems %}
-	<div class="alert-message {% if sub.available %}success{% else %}error{% endif %}">
+	<div class="alert alert-{% if sub.available %}success{% else %}error{% endif %}">
 	{{ forloop.key }}
 	</div>
-	{% empty %}
-	<div class="alert-message info">no subsystems reported</div>
+	{% else %}
+	<div class="alert alert-info">no subsystems reported</div>
 	{% endfor %}
 {% endfor %}
 
@@ -50,12 +57,12 @@ $(function() {
 		var statusDiv = $('#sm-overall-status');
 		
 		// reset the classname
-		statusDiv[0].className = 'alert-message';
+		statusDiv[0].className = 'alert';
 		
 		// update the contents
 		statusDiv
 			.html(status)
-			.addClass(status === 'up' ? 'success' : 'error')
+			.addClass(status === 'up' ? 'alert-success' : 'alert-error')
 			.show();
 	});
 });
