@@ -8,8 +8,7 @@ Find Out More
 	
 	installation/index
 	design
-	components
-
+	components/index
 
 Indices and tables
 ==================
