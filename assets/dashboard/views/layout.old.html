@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel='stylesheet' href='/css/main.css'>
+	<script src="/js/jquery-1.7.1.min.js"></script>
+	
+    <link rel="shortcut icon" href="/favicon.png">
+	<!--
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	-->
+  </head>
+
+<body>
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">{{ title }}</a>
+
+			<ul class="nav">
+			{% for navitem in nav %}
+				<li>
+					{% if navitem.items %}
+					<a href="#" class="dropdown-toggle">{{ navitem.title }}</a>
+					<ul class="dropdown-menu">
+						{% for subitem in navitem.items %}
+						<li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
+						{% endfor %}
+					</ul>
+					{% else %}
+					<a href="{{ navitem.url }}">{{ navitem.title }}</a>
+					{% endif %}
+				</li>
+			{% endfor %}
+			</ul>
+
+		  <div class="pull-right sm-status">status:
+			<span class="sm-server-status label {% if online %}success{% endif %}">{{ status }}</span><span class="label {% if dash.mode == 'primary' %}notice{% endif %}">{{ dash.mode }}</span>
+		  </div>
+		
+        </div>
+      </div>
+    </div>
+
+    <div id="status" class="container">
+	</div>
+	
+    <div id="main" class="container">
+		{% block content %}
+		To be completed...
+		{% endblock %}
+
+	     <footer>
+	       <p>&copy; Sidelab 2011</p>
+	     </footer>
+
+    </div> <!-- /container -->
+
+	<script src="/js/bootstrap-dropdown.js"></script>
+	<script src="/js/bootstrap-alerts.js"></script>
+	<script src="/js/bootstrap-modal.js"></script>
+	<script src="/js/bootstrap-twipsy.js"></script>
+	<script src="/js/bootstrap-popover.js"></script>
+	<script src="/js/handlebars-1.0.0.beta.4.js"></script>
+	<script src="/js/spin.min.js"></script>
+	<script src="/js/dash.js"></script>
+  </body>
+</html>
