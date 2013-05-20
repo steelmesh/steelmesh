@@ -151,6 +151,8 @@ The CouchDB installation comes prepackaged with an init script for CouchDB, we s
 ln -s /opt/couchdb/couchdb/etc/rc.d/couchdb /etc/init.d/couchdb
 ```
 
+### Test CouchDB
+
 Once completed, we should be able to start the couchdb service:
 
 ```
