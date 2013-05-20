@@ -2,14 +2,16 @@
 
 ## RHEL 6.x / CentOS 6.x
 
-This guide will walk you through the process of setting up Steelmesh on a RHEL based server (6.x) based:
+This guide will walk you through the process of setting up Steelmesh on a RHEL based server (6.x).  This guide is based on the guide available at:
+
+<http://www.thegeekstuff.com/2012/06/install-couch-db/>
 
 ### Core Dependencies
 
 Install standard packages required for compilation of Erlang (and CouchDB):
 
 ```
-yum install make gcc libtool libicu-devel openssl-devel
+yum install make gcc gcc-c++ libtool libicu-devel openssl-devel
 ```
 
 ### Erlang Installation
@@ -64,6 +66,30 @@ Configure:
 ```
 
 Make and install:
+
+```
+make
+make install
+```
+
+### Install SpiderMonkey
+
+Download the 1.85 version of Mozilla's JS interpreter, SpiderMonkey:
+
+```
+cd /usr/src
+wget http://ftp.mozilla.org/pub/mozilla.org/js/js185-1.0.0.tar.gz
+tar xfz js185-1.0.0.tar.gz
+cd js-1.8.5/js/src
+```
+
+Configure:
+
+```
+./configure
+```
+
+Make and Install:
 
 ```
 make
