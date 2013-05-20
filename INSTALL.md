@@ -128,3 +128,44 @@ Make and Install:
 make
 make install
 ```
+
+### CouchDB User and Permissions
+
+Next we will need to create the couchdb user:
+
+```
+adduser couchdb
+```
+
+Then, update the ownership of the couchdb var directory:
+
+```
+chown -R couchdb /opt/couchdb/couchdb/var/
+```
+
+### CouchDB Service Registration
+
+The CouchDB installation comes prepackaged with an init script for CouchDB, we simply need to create a symbolic link for that file:
+
+```
+ln -s /opt/couchdb/couchdb/etc/rc.d/couchdb /etc/init.d/couchdb
+```
+
+Once completed, we should be able to start the couchdb service:
+
+```
+service couchdb start
+```
+
+To validate that it is working correctly, curl the server:
+
+```
+curl http://localhost:5984/
+```
+
+If working, this should yield the following JSON output:
+
+```json
+{"couchdb":"Welcome","uuid":"b4dfec2b1ebfc53b7d7df92b089d09c8","version":"1.3.0","vendor":{"version":"1.3.0","name":"The Apache Software Foundation"}}
+```
+
