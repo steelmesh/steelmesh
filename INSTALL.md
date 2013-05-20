@@ -5,12 +5,34 @@
 Install standard packages required for compilation of Erlang (and CouchDB):
 
 ```
-yum install gcc libtool xulrunner-devel libicu-devel openssl-devel
+yum install make gcc libtool libicu-devel openssl-devel
 ```
 
-Download, extract and compile [erlang](http://www.erlang.org):
+Download and extract [erlang](http://www.erlang.org):
 
 ```
 cd /usr/src
-wget http://www.erlang.org/download/otp_src_R15B03-1.tar.gz | tar -xz
+wget http://www.erlang.org/download/otp_src_R15B03-1.tar.gz
+tar xzf otp_src_R15B03-1.tar.gz
+cd /usr/src/otp_src_R15B03
 ```
+
+Mark Erlang Libraries that are not required:
+
+```
+touch lib/odbc/SKIP lib/wx/SKIP
+```
+
+Configure:
+
+```
+./configure --prefix=/opt/couchdb/erlang --without-termcap --without-javac --enable-smp-support --disable-hipe
+```
+
+Make:
+
+```
+make
+make install
+```
+
