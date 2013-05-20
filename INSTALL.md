@@ -2,13 +2,21 @@
 
 ## RHEL 6.x / CentOS 6.x
 
+This guide will walk you through the process of setting up Steelmesh on a RHEL based server (6.x) based:
+
+### Core Dependencies
+
 Install standard packages required for compilation of Erlang (and CouchDB):
 
 ```
 yum install make gcc libtool libicu-devel openssl-devel
 ```
 
-Download and extract [erlang](http://www.erlang.org):
+### Erlang Installation
+
+CouchDB is written using [Erlang](http://www.erlang.org) and thus Erlang is required to compile CouchDB from source.
+
+Download the latest stable version of Erlang R15:
 
 ```
 cd /usr/src
@@ -36,3 +44,28 @@ make
 make install
 ```
 
+### Install cURL
+
+The default version of cURL that is available in the OS packages is not sufficient for compiling or running CouchDB.  As such a more up-to-date version needs to be downloaded and installed from source.
+
+Download the latest stable version of cURL:
+
+```
+cd /usr/src
+wget http://curl.haxx.se/download/curl-7.30.0.tar.gz
+tar xzf curl-7.30.0.tar.gz
+cd curl-7.30.0
+```
+
+Configure:
+
+```
+./configure --prefix=/opt/couchdb/curl
+```
+
+Make and install:
+
+```
+make
+make install
+```
