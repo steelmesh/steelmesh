@@ -11,7 +11,7 @@ This guide will walk you through the process of setting up Steelmesh on a RHEL b
 Install standard packages required for compilation of Erlang (and CouchDB):
 
 ```
-yum install make gcc gcc-c++ libtool libicu-devel openssl-devel
+yum install make gcc gcc-c++ libtool libicu-devel openssl-devel xulrunner-devel
 ```
 
 ### Erlang Installation
@@ -87,6 +87,39 @@ Configure:
 
 ```
 ./configure
+```
+
+Make and Install:
+
+```
+make
+make install
+```
+
+### Install CouchDB
+
+Download the CouchDB 1.3.0 source from the Apache releases:
+
+```
+cd /usr/src
+wget http://apache.mirror.uber.com.au/couchdb/source/1.3.0/apache-couchdb-1.3.0.tar.gz
+tar xfz apache-couchdb-1.3.0.tar.gz
+cd apache-couchdb-1.3.0
+```
+
+Prepare ENV variables:
+
+```
+export ERL=/opt/couchdb/erlang/bin/erl
+export ERLC=/opt/couchdb/erlang/bin/erlc
+export CURL_CONFIG=/opt/couchdb/curl/bin/curl-config
+export LDFLAGS=-L/opt/couchdb/curl/lib
+```
+
+Configure:
+
+```
+./configure --prefix=/opt/couchdb/couchdb --with-erlang=/opt/couchdb/erlang/lib/erlang/usr/include/ --with-js-include=/usr/src/js-1.8.5/js/src --enable-js-trunk
 ```
 
 Make and Install:
