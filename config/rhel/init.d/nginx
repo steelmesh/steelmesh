@@ -8,7 +8,7 @@
 # processname: nginx
 # config:      /opt/nginx/conf/nginx.conf
 # config:      /etc/sysconfig/nginx
-# pidfile:     /opt/nginx/nginx.pid
+# pidfile:     /var/run/nginx.pid
  
 # Source function library.
 . /etc/rc.d/init.d/functions
