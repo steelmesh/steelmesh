@@ -193,7 +193,97 @@ Make and Install:
 ```
 make
 make install
+ln -s /opt/node/bin/node /usr/bin/node
+ln -s /opt/node/bin/npm /usr/bin/npm
 ```
+
+## Redis
+
+[Redis](http://redis.io/) is a lightweight cache and pubsub message bus.  Follow the following instructions to install from source:
+
+```
+cd /usr/src
+wget http://redis.googlecode.com/files/redis-2.6.13.tar.gz
+tar xzf redis-2.6.13.tar.gz
+cd redis-2.6.13
+```
+
+Make Redis:
+
+```
+PREFIX=/opt/redis make install
+```
+
+Install default `redis.conf` file:
+
+```
+cp redis.conf /opt/redis
+```
+
+### Configure Redis Service
+
+A default redis service configuration has been provided in the steelmesh source repository, and can be installed using the following commands:
+
+```
+curl https://raw.github.com/steelmesh/steelmesh/master/config/rhel/init.d/redis > /etc/init.d/redis
+chmod u+x /etc/init.d/redis
+```
+
+
+
+## Install Steelmesh
+
+Installing Steelmesh requires no compilation as it is a Node.js application.  Download the latest version of Steelmesh to the `/opt` folder:
+
+```
+curl https://codeload.github.com/steelmesh/steelmesh/tar.gz/v0.9.8 | tar xz
+ln -s steelmesh-0.9.8 steelmesh
+```
+
+### Configure Steelmesh
+
+We now need to create a user that will own the steelmesh process:
+
+```
+adduser steelmesh -d /opt/steelmesh
+```
+
+Change ownership of the steelmesh folder to the `steelmesh` user:
+
+```
+chown -R steelmesh:steelmesh /opt/steelmesh-0.9.8
+chown -R steelmesh:steelmesh /opt/steelmesh
+```
+
+We now need to install dependencies for the steelmesh application.  This is best done as the `steelmesh` user so let's log in as that user now:
+
+```
+su -l steelmesh
+```
+
+As the home directory for the user was set to `/opt/steelmesh` we should be in the correct directory to install dependencies:
+
+```
+npm install
+```
+
+Finally, create the required directories for steelmesh to run correctly:
+
+```
+mkdir /opt/steelmesh/logs
+```
+
+### Test Steelmesh and Install Steelmesh Service
+
+
+
+We are now ready to install the `/etc/init.d` script for the steelmesh service.  A template configuration file can be download from the steelmesh source repository:
+
+```
+curl https://raw.github.com/steelmesh/steelmesh/master/config/rhel/init.d/steelmesh > /etc/init.d/steelmesh
+chmod u+x /etc/init.d/steelmesh
+```
+
 
 ### Configure Node.js
 
