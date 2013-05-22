@@ -11,7 +11,7 @@ This guide will walk you through the process of setting up Steelmesh on a RHEL b
 Install standard packages required for compilation of Erlang (and CouchDB):
 
 ```
-yum install make gcc gcc-c++ libtool libicu-devel openssl-devel xulrunner-devel
+yum install make gcc gcc-c++ libtool libicu-devel openssl-devel xulrunner-devel pcre-devel
 ```
 
 ### Erlang Installation
@@ -171,3 +171,28 @@ If working, this should yield the following JSON output:
 {"couchdb":"Welcome","uuid":"b4dfec2b1ebfc53b7d7df92b089d09c8","version":"1.3.0","vendor":{"version":"1.3.0","name":"The Apache Software Foundation"}}
 ```
 
+### Install Nginx
+
+[Nginx](http://wiki.nginx.org) is a lightweight, robust web server that is used in the Steelmesh stack to handle all incoming requests.  Requests are then passed onto the underlying node server.
+
+To install nginx from source, do the following:
+
+```
+cd /usr/src
+wget http://nginx.org/download/nginx-1.4.1.tar.gz
+tar xzf nginx-1.4.1.tar.gz
+cd nginx-1.4.1
+```
+
+Configure:
+
+```
+./configure --prefix=/opt/nginx
+```
+
+Make and Install:
+
+```
+make
+make install
+```
