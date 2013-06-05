@@ -143,6 +143,22 @@ Then, update the ownership of the couchdb var directory:
 chown -R couchdb /opt/couchdb/couchdb/var/
 ```
 
+### CouchDB Local Configuration
+
+By default, the CouchDB server only listens on the localhost address of `127.0.0.1`.  This can be overriden in the `local.ini` file which can be found in the following location:
+
+```
+/opt/couchdb/couchdb/etc/couchdb/local.ini
+```
+
+Simply change the section marked `httpd` to match the following:
+
+```erlang
+[httpd]
+;port = 5984
+bind_address = 0.0.0.0
+```
+
 ### CouchDB Service Registration
 
 The CouchDB installation comes prepackaged with an init script for CouchDB, we simply need to create a symbolic link for that file:
