@@ -54,7 +54,7 @@ The default version of cURL that is available in the OS packages is not sufficie
 
 Download the latest stable version of cURL:
 
-```
+```console
 cd /usr/src
 wget http://curl.haxx.se/download/curl-7.30.0.tar.gz
 tar xzf curl-7.30.0.tar.gz
@@ -63,13 +63,13 @@ cd curl-7.30.0
 
 Configure:
 
-```
+```console
 ./configure --prefix=/opt/couchdb/curl
 ```
 
 Make and install:
 
-```
+```console
 make
 make install
 ```
@@ -78,7 +78,7 @@ make install
 
 Download the 1.85 version of Mozilla's JS interpreter, SpiderMonkey:
 
-```
+```console
 cd /usr/src
 wget http://ftp.mozilla.org/pub/mozilla.org/js/js185-1.0.0.tar.gz
 tar xfz js185-1.0.0.tar.gz
@@ -235,7 +235,7 @@ PREFIX=/opt/redis make install
 Install default `redis.conf` file:
 
 ```
-cp redis.conf /opt/redis
+curl https://raw.github.com/DamonOehlman/steelmesh/master/config/redis/redis.conf > /opt/redis/redis.conf
 ```
 
 ### Configure Redis Service
@@ -246,8 +246,6 @@ A default redis service configuration has been provided in the steelmesh source 
 curl https://raw.github.com/DamonOehlman/steelmesh/master/config/rhel/init.d/redis > /etc/init.d/redis
 chmod u+x /etc/init.d/redis
 ```
-
-
 
 ## Install Steelmesh
 
@@ -348,14 +346,14 @@ make install
 To ensure nginx is started on machine start, you will need to create an `nginx` entry in `/etc/init.d`.  If you have used the paths as described in this installation guide you can use the one stored in the steelmesh repository:
 
 ```
-wget -o /etc/init.d/nginx https://raw.github.com/steelmesh/steelmesh/master/config/rhel/init.d/nginx
+wget -o /etc/init.d/nginx https://raw.github.com/DamonOehlman/steelmesh/master/config/rhel/init.d/nginx
 chmod u+x /etc/init.d/nginx
 ```
 
 Now, download the boilerplate nginx configuration file onto the machine:
 
 ```
-wget -o /opt/nginx/conf/nginx.conf https://raw.github.com/steelmesh/steelmesh/master/config/nginx.conf
+wget -o /opt/nginx/conf/nginx.conf https://raw.github.com/DamonOehlman/steelmesh/master/config/nginx.conf
 ```
 
 To validate the configuration has been downloaded succesfully, you can use the `configtest` service option:
@@ -388,16 +386,17 @@ Firstly, we need to allow CouchDB to accept connections on port 5984:
 iptables -I INPUT 5 -p tcp -m tcp --dport 5984 -j ACCEPT
 ```
 
-Next we should let traffic through to the Node.js HTTP server on port 3000:
+Next we should let traffic through to the Steelmesh ports (6633 primary, 3274 dashboard):
 
 ```
-iptables -I INPUT 6 -p tcp -m tcp --dport 3000 -j ACCEPT
+iptables -I INPUT 6 -p tcp -m tcp --dport 6633 -j ACCEPT
+iptables -I INPUT 7 -p tcp -m tcp --dport 3274 -j ACCEPT
 ```
 
 Finally, if you installed nginx in front of the steelmesh node server, you will also want to allow traffic through on port 80:
 
 ```
-iptables -I INPUT 7 -p tcp -m tcp --dport 80 -j ACCEPT
+iptables -I INPUT 8 -p tcp -m tcp --dport 80 -j ACCEPT
 ```
 
 Review your firewall configuration:
