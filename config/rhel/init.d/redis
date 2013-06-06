@@ -18,7 +18,7 @@
 # Check that networking is up.
 [ "$NETWORKING" = "no" ] && exit 0
 
-redis="/opt/redis/redis-server"
+redis="/opt/redis/bin/redis-server"
 prog=$(basename $redis)
 
 REDIS_CONF_FILE="/opt/redis/redis.conf"
