@@ -243,7 +243,7 @@ cp redis.conf /opt/redis
 A default redis service configuration has been provided in the steelmesh source repository, and can be installed using the following commands:
 
 ```
-curl https://raw.github.com/steelmesh/steelmesh/master/config/rhel/init.d/redis > /etc/init.d/redis
+curl https://raw.github.com/DamonOehlman/steelmesh/master/config/rhel/init.d/redis > /etc/init.d/redis
 chmod u+x /etc/init.d/redis
 ```
 
@@ -254,7 +254,8 @@ chmod u+x /etc/init.d/redis
 Installing Steelmesh requires no compilation as it is a Node.js application.  Download the latest version of Steelmesh to the `/opt` folder:
 
 ```
-curl https://codeload.github.com/steelmesh/steelmesh/tar.gz/v0.9.8 | tar xz
+cd /opt
+curl https://codeload.github.com/DamonOehlman/steelmesh/tar.gz/v0.9.8 | tar xz
 ln -s steelmesh-0.9.8 steelmesh
 ```
 
@@ -291,21 +292,30 @@ Finally, create the required directories for steelmesh to run correctly:
 mkdir /opt/steelmesh/logs
 ```
 
+Exit from the steelmesh user's shell process, back to the root user prompt:
+
+```
+exit
+```
+
 ### Test Steelmesh and Install Steelmesh Service
-
-
 
 We are now ready to install the `/etc/init.d` script for the steelmesh service.  A template configuration file can be download from the steelmesh source repository:
 
 ```
-curl https://raw.github.com/steelmesh/steelmesh/master/config/rhel/init.d/steelmesh > /etc/init.d/steelmesh
+curl https://raw.github.com/DamonOehlman/steelmesh/master/config/rhel/init.d/steelmesh > /etc/init.d/steelmesh
 chmod u+x /etc/init.d/steelmesh
 ```
 
+## Create Service Start Run Level Links
 
-### Configure Node.js
+To have the appropriate services start on system start, symbolic links need to be added to the appropriate runlevel directories.  In this case, we will be adding them to the `/etc/rc3.d` but you can configure them as you see fit (I'm assuming you might know more than I about system administration):
 
-TODO
+```
+ln -s /etc/init.d/couchdb /etc/rc3.d/S70couchdb
+ln -s /etc/init.d/redis /etc/rc3.d/S71redis
+ln -s /etc/init.d/steelmesh /etc/rc3.d/S75steelmesh
+```
 
 ## Nginx (Optional, but recommended)
 
