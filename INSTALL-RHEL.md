@@ -4,6 +4,8 @@ This guide will walk you through the process of setting up Steelmesh on a RHEL b
 
 <http://www.thegeekstuff.com/2012/06/install-couch-db/>
 
+__NOTE:__ This installation guide assumes you are completing steps as the root user on the machine.  If this is not the case, then you may need to use `sudo` to have particular commands complete successfully.
+
 ## Core Dependencies
 
 Install standard packages required for compilation of Erlang (and CouchDB):
