@@ -375,3 +375,40 @@ If this has worked ok, then you should be able to retrieve a document from steel
 ```
 TODO
 ```
+
+## iptables Configuration
+
+If your CentOS / RHEL installation has iptables installed and activated by default, you will need to make some modifications to the firewall rules to allow traffic to access the local services on the box.  If you do not have iptables installed (i.e. you are using dedicated firewalls on your network) then you can skip this step.
+
+__NOTE:__ The instructions below use the iptables `--insert` command (`-I`) as it is assuming that a default iptables configuration is already in place.  It may be more appropriate to review your existing configuration `iptables -L -n` and then craft the rules using the `--append` (`-A`) command...
+
+Firstly, we need to allow CouchDB to accept connections on port 5984:
+
+```
+iptables -I INPUT 5 -p tcp -m tcp --dport 5984 -j ACCEPT
+```
+
+Next we should let traffic through to the Node.js HTTP server on port 3000:
+
+```
+iptables -I INPUT 6 -p tcp -m tcp --dport 3000 -j ACCEPT
+```
+
+Finally, if you installed nginx in front of the steelmesh node server, you will also want to allow traffic through on port 80:
+
+```
+iptables -I INPUT 7 -p tcp -m tcp --dport 80 -j ACCEPT
+```
+
+Review your firewall configuration:
+
+```
+iptables -L -n
+```
+
+If everything looks to be in order, then save the configuration and restart the service:
+
+```
+iptables-save > /etc/sysconfig/iptables
+service iptables restart
+```
