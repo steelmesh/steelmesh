@@ -142,7 +142,8 @@ adduser couchdb
 Then, update the ownership of the couchdb var directory:
 
 ```
-chown -R couchdb /opt/couchdb/couchdb/var/
+chown -R couchdb:couchdb /opt/couchdb/couchdb/var/
+chown couchdb:couchdb /opt/couchdb/couchdb/etc/couchdb/local.ini
 ```
 
 ### CouchDB Local Configuration
@@ -160,6 +161,15 @@ Simply change the section marked `httpd` to match the following:
 ;port = 5984
 bind_address = 0.0.0.0
 ```
+
+Additionally, add an admin user to take the installation out of "Admin Party" mode.  Look for the section marked `[admins]` and add an admin username and password.  By default, we give the admin user a password of steelmesh but it's recommended that you choose something different:
+
+```
+[admins]
+admin = steelmesh
+```
+
+While you provide the password in plaintext, the CouchDB server will automatically replace the server with a hashed equivalent once it starts.
 
 ### CouchDB Service Registration
 
@@ -235,7 +245,7 @@ PREFIX=/opt/redis make install
 Install default `redis.conf` file:
 
 ```
-curl https://raw.github.com/DamonOehlman/steelmesh/master/config/redis/redis.conf > /opt/redis/redis.conf
+curl https://raw.github.com/steelmesh/steelmesh/master/config/redis/redis.conf > /opt/redis/redis.conf
 ```
 
 ### Configure Redis Service
@@ -243,7 +253,7 @@ curl https://raw.github.com/DamonOehlman/steelmesh/master/config/redis/redis.con
 A default redis service configuration has been provided in the steelmesh source repository, and can be installed using the following commands:
 
 ```
-curl https://raw.github.com/DamonOehlman/steelmesh/master/config/rhel/init.d/redis > /etc/init.d/redis
+curl https://raw.github.com/steelmesh/steelmesh/master/config/rhel/init.d/redis > /etc/init.d/redis
 chmod u+x /etc/init.d/redis
 ```
 
@@ -253,7 +263,7 @@ Installing Steelmesh requires no compilation as it is a Node.js application.  Do
 
 ```
 cd /opt
-curl https://codeload.github.com/DamonOehlman/steelmesh/tar.gz/v0.9.8 | tar xz
+curl https://codeload.github.com/steelmesh/steelmesh/tar.gz/v0.9.8 | tar xz
 ln -s steelmesh-0.9.8 steelmesh
 ```
 
@@ -301,7 +311,7 @@ exit
 We are now ready to install the `/etc/init.d` script for the steelmesh service.  A template configuration file can be download from the steelmesh source repository:
 
 ```
-curl https://raw.github.com/DamonOehlman/steelmesh/master/config/rhel/init.d/steelmesh > /etc/init.d/steelmesh
+curl https://raw.github.com/steelmesh/steelmesh/master/config/rhel/init.d/steelmesh > /etc/init.d/steelmesh
 chmod u+x /etc/init.d/steelmesh
 ```
 
@@ -346,14 +356,14 @@ make install
 To ensure nginx is started on machine start, you will need to create an `nginx` entry in `/etc/init.d`.  If you have used the paths as described in this installation guide you can use the one stored in the steelmesh repository:
 
 ```
-wget -o /etc/init.d/nginx https://raw.github.com/DamonOehlman/steelmesh/master/config/rhel/init.d/nginx
+wget -o /etc/init.d/nginx https://raw.github.com/steelmesh/steelmesh/master/config/rhel/init.d/nginx
 chmod u+x /etc/init.d/nginx
 ```
 
 Now, download the boilerplate nginx configuration file onto the machine:
 
 ```
-wget -o /opt/nginx/conf/nginx.conf https://raw.github.com/DamonOehlman/steelmesh/master/config/nginx.conf
+wget -o /opt/nginx/conf/nginx.conf https://raw.github.com/steelmesh/steelmesh/master/config/nginx.conf
 ```
 
 To validate the configuration has been downloaded succesfully, you can use the `configtest` service option:
