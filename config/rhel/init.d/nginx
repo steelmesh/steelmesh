@@ -1,129 +1,55 @@
 #!/bin/sh
-#
-# nginx - this script starts and stops the nginx daemon
-#
-# chkconfig:   - 85 15 
-# description:  Nginx is an HTTP(S) server, HTTP(S) reverse \
-#               proxy and IMAP/POP3 proxy server
-# processname: nginx
-# config:      /opt/nginx/conf/nginx.conf
-# config:      /etc/sysconfig/nginx
-# pidfile:     /var/run/nginx.pid
  
-# Source function library.
-. /etc/rc.d/init.d/functions
+NGINX_BASE_DIR="/opt/nginx"
+NGINX_DAEMON="${NGINX_BASE_DIR}/sbin/nginx"
+NGINX_CONF="${NGINX_BASE_DIR}/conf/nginx.conf"
  
-# Source networking configuration.
-. /etc/sysconfig/network
+__launch_signal( ) {
  
-# Check that networking is up.
-[ "$NETWORKING" = "no" ] && exit 0
- 
-nginx="/opt/nginx/sbin/nginx"
-prog=$(basename $nginx)
- 
-NGINX_CONF_FILE="/opt/nginx/conf/nginx.conf"
- 
-[ -f /etc/sysconfig/nginx ] && . /etc/sysconfig/nginx
- 
-lockfile=/var/lock/subsys/nginx
- 
-make_dirs() {
-   # make required directories
-   user=`$nginx -V 2>&1 | grep "configure arguments:" | sed 's/[^*]*--user=\([^ ]*\).*/\1/g' -`
-   if [ -z "`grep $user /etc/passwd`" ]; then
-       useradd -M -s /bin/nologin $user
-   fi
-   options=`$nginx -V 2>&1 | grep 'configure arguments:'`
-   for opt in $options; do
-       if [ `echo $opt | grep '.*-temp-path'` ]; then
-           value=`echo $opt | cut -d "=" -f 2`
-           if [ ! -d "$value" ]; then
-               # echo "creating" $value
-               mkdir -p $value && chown -R $user $value
-           fi
-       fi
-   done
+  ${NGINX_DAEMON} -s ${1} &>/dev/null
 }
  
-start() {
-    [ -x $nginx ] || exit 5
-    [ -f $NGINX_CONF_FILE ] || exit 6
-    make_dirs
-    echo -n $"Starting $prog: "
-    daemon $nginx -c $NGINX_CONF_FILE
-    retval=$?
-    echo
-    [ $retval -eq 0 ] && touch $lockfile
-    return $retval
+__checkconfig( ) {
+ 
+  ${NGINX_DAEMON} -c ${NGINX_CONF} -t &>/dev/null
 }
  
-stop() {
-    echo -n $"Stopping $prog: "
-    killproc $prog -QUIT
-    retval=$?
-    echo
-    [ $retval -eq 0 ] && rm -f $lockfile
-    return $retval
+__start( ) {
+ 
+  [ -r ${NGINX_CONF} ] || exit 1 
+ 
+  __checkconfig && ${NGINX_DAEMON} -c ${NGINX_CONF} &>/dev/null || return ${?}
 }
  
-restart() {
-    configtest || return $?
-    stop
-    sleep 1
-    start
+__stop( ) {
+ 
+  __launch_signal stop
 }
  
-reload() {
-    configtest || return $?
-    echo -n $"Reloading $prog: "
-    killproc $nginx -HUP
-    RETVAL=$?
-    echo
+__reload( ) {
+ 
+  __checkconfig && __launch_signar reload || return ${?}  
 }
  
-force_reload() {
-    restart
+__restart( ) {
+ 
+  __stop && __start
 }
  
-configtest() {
-  $nginx -t -c $NGINX_CONF_FILE
+__show_usage( ) {
+ 
+  echo "Usage: ${0} {start|stop|restart|reload}"
+  exit 3
 }
  
-rh_status() {
-    status $prog
-}
- 
-rh_status_q() {
-    rh_status >/dev/null 2>&1
-}
- 
-case "$1" in
-    start)
-        rh_status_q && exit 0
-        $1
-        ;;
-    stop)
-        rh_status_q || exit 0
-        $1
-        ;;
-    restart|configtest)
-        $1
-        ;;
-    reload)
-        rh_status_q || exit 7
-        $1
-        ;;
-    force-reload)
-        force_reload
-        ;;
-    status)
-        rh_status
-        ;;
-    condrestart|try-restart)
-        rh_status_q || exit 0
-            ;;
-    *)
-        echo $"Usage: $0 {start|stop|status|restart|condrestart|try-restart|reload|force-reload|configtest}"
-        exit 2
+##
+# :: main ::
+case "${1}" in
+  start|stop|restart|reload)
+    [ -x ${NGINX_DAEMON} ] || exit 2
+    __${1}
+    ;;
+  *)
+    __show_usage
+    ;;
 esac
