@@ -341,7 +341,7 @@ cd nginx-1.4.1
 Configure:
 
 ```
-./configure --prefix=/opt/nginx
+./configure --with-pcre --with-http_ssl_module --with-http_spdy_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_stub_status_module --prefix=/opt/nginx
 ```
 
 Make and Install:
@@ -356,7 +356,7 @@ make install
 To ensure nginx is started on machine start, you will need to create an `nginx` entry in `/etc/init.d`.  If you have used the paths as described in this installation guide you can use the one stored in the steelmesh repository:
 
 ```
-wget -o /etc/init.d/nginx https://raw.github.com/steelmesh/steelmesh/master/config/rhel/init.d/nginx
+curl https://raw.github.com/steelmesh/steelmesh/master/config/rhel/init.d/nginx > /etc/init.d/nginx
 chmod u+x /etc/init.d/nginx
 ```
 
@@ -366,22 +366,17 @@ Now, download the boilerplate nginx configuration file onto the machine:
 wget -o /opt/nginx/conf/nginx.conf https://raw.github.com/steelmesh/steelmesh/master/config/nginx.conf
 ```
 
-To validate the configuration has been downloaded succesfully, you can use the `configtest` service option:
-
-```
-service nginx configtest
-```
-
-If it's ok, then try running the service:
+With the configuration downloaded, and the init.d script active you should now be able to start the service:
 
 ```
 service nginx start
 ```
 
-If this has worked ok, then you should be able to retrieve a document from steelmesh via nginx:
+If this has worked ok, then you should be able to retrieve a document from steelmesh via nginx.  For example, if you have the test application installed, then you should be able to execute the following command and get a valid response from the server:
 
-```
-TODO
+```console
+~ curl http://localhost/app-test/time
+{"time":"2013-06-10T22:26:10.337Z"}
 ```
 
 ## iptables Configuration
