@@ -32,21 +32,25 @@ var db = nano.use(config.dbname);
 
 function preflight(callback) {
   async.parallel([
-    require('./preflight/couch')(nano, config)
+    require('./preflight/couch')(nano, config),
+    require('./preflight/nginx')(nano, config)
   ], callback);
 }
 
 function init(callback) {
   async.parallel([
-    require('steelmesh-appsync')(db, {
-      targetPath: path.resolve(__dirname, config.appsPath)
-    })
+    require('./init/appsync')(nano, config)
   ], callback);
 }
 
 function start(callback) {
-  callback();
+  async.parallel([
+    require('./start/monitor.js')(nano, config)
+  ], callback);
 }
+
+// resolve the appsPath against the current directory
+config.appsPath = path.resolve(__dirname, config.appsPath);
 
 async.series([preflight, init, start], function(err) {
   if (err) {
