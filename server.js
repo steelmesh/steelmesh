@@ -11,7 +11,7 @@ var config = require('rc')('steelmesh', {
 
   nginx: {
     path: 'nginx',
-    port: 8900
+    port: 6633
   }
 });
 
@@ -44,14 +44,15 @@ var nginx = require('ngineer')(nginxPath, {
 
 function preflight(callback) {
   async.parallel([
+    nginx.reset,
     require('./preflight/couch')(nano, nginx, config),
-    require('./preflight/nginx')(nano, nginx, config)
   ], callback);
 }
 
 function init(callback) {
   async.parallel([
-    require('./init/appsync')(nano, nginx, config)
+    require('./init/appsync')(nano, nginx, config),
+    require('./init/nginx')(nano, nginx, config)
   ], callback);
 }
 
