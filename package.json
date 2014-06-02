@@ -12,6 +12,7 @@
     "async": "~0.9",
     "debug": "~0.8",
     "nano": "^5",
+    "ngineer": "0.0.3",
     "out": "~0.5",
     "rc": "~0.4",
     "steelmesh-appsync": "~0.1"
