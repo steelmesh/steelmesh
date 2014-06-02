@@ -13,4 +13,5 @@ npm-debug.log
 steelmesh.pid
 docs/_build
 apps
-nginx/
+nginx/conf/
+nginx/logs/
