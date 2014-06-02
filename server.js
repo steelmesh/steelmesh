@@ -11,6 +11,25 @@ var config = require('rc')('steelmesh', {
 var nano = require('nano')(config.server);
 var db = nano.use(config.dbname);
 
+/**
+  # steelmesh
+
+  Steelmesh is a [Node.js](http://nodejs.org) development / deployment platform
+  that works in conjunction with [CouchDB](http://couchdb.apache.org) to keep
+  applications up to date and in sync.
+
+  ## Why Use Steelmesh?
+
+  Steelmesh has primarily been designed for hosting "behind the firewall" node
+  applications in, dare I say it, enterprise environments.  It really hasn't been
+  designed for your next gazillion user startup or other such "webscale"
+  deployments.
+
+  What Steelmesh does do a bang up job on though, is making working with
+  horizontally scaled, homogeneous clusters, really easy.  Heck it's almost fun.
+
+**/
+
 function preflight(callback) {
   async.parallel([
     require('./preflight/couch')(nano, config)
@@ -18,12 +37,10 @@ function preflight(callback) {
 }
 
 function init(callback) {
-  var appsync = require('steelmesh-appsync')(db, {
-    targetPath: path.resolve(__dirname, config.appsPath)
-  });
-
   async.parallel([
-    appsync
+    require('steelmesh-appsync')(db, {
+      targetPath: path.resolve(__dirname, config.appsPath)
+    })
   ], callback);
 }
 

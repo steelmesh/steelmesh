@@ -29,5 +29,9 @@
   "bugs": {
     "url": "https://github.com/steelmesh/steelmesh/issues"
   },
-  "homepage": "https://github.com/steelmesh/steelmesh"
+  "homepage": "https://github.com/steelmesh/steelmesh",
+  "scripts": {
+    "start": "node server.js",
+    "gendocs": "gendocs > README.md"
+  }
 }
