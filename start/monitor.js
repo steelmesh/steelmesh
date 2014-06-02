@@ -1,6 +1,6 @@
 var debug = require('debug')('steelmesh:monitor');
 
-module.exports = function(nano, config) {
+module.exports = function(nano, nginx, config) {
   return function(callback) {
     var feed = nano.db.follow(config.dbname, { since: 'now' });
 

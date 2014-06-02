@@ -5,11 +5,21 @@ var config = require('rc')('steelmesh', {
   server: 'http://localhost:5984/',
   dbname: 'steelmesh',
 
-  appsPath: 'apps'
+  appsPath: 'apps',
+
+  nginx: {
+    path: 'nginx',
+    port: 8900
+  }
 });
 
 var nano = require('nano')(config.server);
 var db = nano.use(config.dbname);
+var nginxPath = path.resolve(__dirname, config.nginx.path);
+var nginx = require('ngineer')(nginxPath, {
+  port: config.nginx.port
+});
+
 
 /**
   # steelmesh
@@ -32,20 +42,20 @@ var db = nano.use(config.dbname);
 
 function preflight(callback) {
   async.parallel([
-    require('./preflight/couch')(nano, config),
-    require('./preflight/nginx')(nano, config)
+    require('./preflight/couch')(nano, nginx, config),
+    require('./preflight/nginx')(nano, nginx, config)
   ], callback);
 }
 
 function init(callback) {
   async.parallel([
-    require('./init/appsync')(nano, config)
+    require('./init/appsync')(nano, nginx, config)
   ], callback);
 }
 
 function start(callback) {
   async.parallel([
-    require('./start/monitor.js')(nano, config)
+    require('./start/monitor.js')(nano, nginx, config)
   ], callback);
 }
 

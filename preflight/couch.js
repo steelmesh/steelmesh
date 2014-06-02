@@ -1,6 +1,6 @@
 var debug = require('debug')('steelmesh:preflight');
 
-module.exports = function(nano, config) {
+module.exports = function(nano, nginx, config) {
   return function(callback) {
     // if the db is not defined in the configuration error out
     if (! config.dbname) {
