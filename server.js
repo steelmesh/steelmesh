@@ -68,4 +68,6 @@ async.series([preflight, init, start], function(err) {
   if (err) {
     return out.error(err);
   }
+
+  console.log('steelmesh running at http://localhost:' + config.nginx.port);
 });
