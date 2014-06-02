@@ -10,6 +10,7 @@
   "main": "server.js",
   "dependencies": {
     "async": "~0.9",
+    "debug": "~0.8",
     "nano": "^5",
     "rc": "~0.4",
     "steelmesh-appsync": "~0.1"
