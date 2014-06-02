@@ -2,8 +2,10 @@ var async = require('async');
 var out = require('out');
 var path = require('path');
 var config = require('rc')('steelmesh', {
-  server: 'http://localhost:5984/',
-  dbname: 'steelmesh',
+  couch: {
+    url: 'http://localhost:5984/',
+    dbname: 'steelmesh'
+  },
 
   appsPath: 'apps',
 
@@ -13,8 +15,8 @@ var config = require('rc')('steelmesh', {
   }
 });
 
-var nano = require('nano')(config.server);
-var db = nano.use(config.dbname);
+var nano = require('nano')(config.couch.url);
+var db = nano.use(config.couch.dbname);
 var nginxPath = path.resolve(__dirname, config.nginx.path);
 var nginx = require('ngineer')(nginxPath, {
   port: config.nginx.port
