@@ -1,4 +1,4 @@
-var debug = require('debug')('steelmesh:init:couch');
+var debug = require('debug')('steelmesh:preflight');
 
 module.exports = function(nano, config) {
   return function(callback) {
