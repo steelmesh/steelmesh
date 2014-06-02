@@ -1,16 +1,13 @@
 {
   "name": "steelmesh",
   "description": "CouchDB distribution and management of Node.js applications",
-  "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "tags": [
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "keywords": [
     "couchdb",
     "distributed"
   ],
   "version": "0.9.8",
   "main": "server.js",
-  "engines": {
-    "node": ">= 0.6.x < 0.9.0"
-  },
   "dependencies": {
     "async": "0.1.x",
     "attachmate": "0.1.x",
@@ -30,13 +27,21 @@
     "out": "*",
     "underscore": "1.3.x"
   },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "http://github.com/steelmesh/steelmesh.git"
+    "url": "https://github.com/steelmesh/steelmesh.git"
   },
+  "license": "Apache 2.0",
   "bugs": {
-    "url": "http://github.com/steelmesh/steelmesh/issues"
+    "url": "https://github.com/steelmesh/steelmesh/issues"
   },
-  "contributors": []
+  "homepage": "https://github.com/steelmesh/steelmesh"
 }
