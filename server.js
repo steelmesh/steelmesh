@@ -22,7 +22,7 @@ function start(callback) {
   callback();
 }
 
-async.series([init, start], function(err) {
+async.series([preflight, init, start], function(err) {
   if (err) {
     return out.error(err);
   }
