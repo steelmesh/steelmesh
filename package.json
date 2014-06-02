@@ -9,6 +9,8 @@
   "version": "0.9.8",
   "main": "server.js",
   "dependencies": {
+    "nano": "^5",
+    "steelmesh-appsync": "~0.1"
   },
   "directories": {
     "doc": "docs",
